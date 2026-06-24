@@ -5,6 +5,7 @@ function appsOpen(){var n=new Date();return n>=new Date(COHORT_OPEN)&&n<=new Dat
 function mbThanks(f){f.style.display="none";f.parentNode.querySelector(".thanks").style.display="block";return false;}
 document.addEventListener("DOMContentLoaded",function(){
   var open=appsOpen();
+  var fc=document.getElementById("footcta"); if(fc) fc.textContent=open?"Applications are open. Apply.":"Cohorts open soon. Join the waitlist.";
   document.querySelectorAll(".js-apply").forEach(function(b){
     if(b.classList.contains("apply")) b.textContent=open?"Apply":"Join the waitlist";
     b.addEventListener("click",function(e){e.preventDefault();
