@@ -15,7 +15,10 @@ function mbEnquiry(f){
 document.addEventListener('DOMContentLoaded',function(){
  var open=appsOpen();
  document.querySelectorAll('.js-apply').forEach(function(b){
-  b.addEventListener('click',function(e){e.preventDefault();openOv(open?'ov-apply':'ov-wait');});});
+  b.addEventListener('click',function(e){e.preventDefault();
+   if(open){ var el=document.getElementById('apply');
+    if(el){ el.scrollIntoView({behavior:'smooth'}); } else { location.href='admissions.html#apply'; } }
+   else { openOv('ov-wait'); }});});
  document.querySelectorAll('[data-ov]').forEach(function(b){
   b.addEventListener('click',function(e){e.preventDefault();openOv(b.getAttribute('data-ov'));});});
  document.querySelectorAll('.foot-cta').forEach(function(el){el.textContent=open?'Applications are open. Apply.':'Join the waitlist.';});
