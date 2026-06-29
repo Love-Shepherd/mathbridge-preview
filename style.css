@@ -235,6 +235,7 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .enquiry .fgroup{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);margin:32px 0 2px;padding-top:26px;border-top:1px solid var(--line)}
 .enquiry .hp{position:absolute;left:-9999px}
 .enq-thanks{display:none;font-family:'Spectral',serif;font-size:24px;line-height:1.35;color:var(--ink);padding:18px 0}
+.thanks{display:none}
 
 /* reveal */
 .r{opacity:0;transform:translateY(24px)}
