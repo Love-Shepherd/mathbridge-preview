@@ -188,6 +188,10 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .foot h4{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin-bottom:16px;font-weight:400}
 .foot .fcol a{display:block;font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-tx);margin:9px 0;transition:color .3s}
 .foot .fcol a:hover{color:var(--gold-l)}
+.foot .social{display:flex;gap:14px;margin-top:6px}
+.foot .social a{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--forest-line);color:var(--forest-tx);transition:color .3s ease,border-color .3s ease}
+.foot .social a:hover{border-color:var(--gold-l);color:var(--gold-l)}
+.foot .social svg{width:18px;height:18px;display:block}
 .foot .fp{color:var(--forest-tx2);font-size:16px;line-height:1.6;max-width:34ch}
 .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:clamp(40px,6vh,70px);padding-top:26px;border-top:1px solid var(--forest-line);
  font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-tx2)}
