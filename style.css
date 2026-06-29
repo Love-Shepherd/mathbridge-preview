@@ -119,6 +119,27 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .band-forest .row .rd{color:var(--forest-tx2)}
 .band-forest .row .re{color:var(--gold-l)}
 
+/* journal essay list */
+.jlist{border-top:1px solid var(--line)}
+.jentry{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(20px,4vw,56px);align-items:baseline;padding:clamp(22px,3vw,32px) 0;border-bottom:1px solid var(--line)}
+.jentry .jt{font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.5vw,30px);line-height:1.1}
+.jentry .jd{font-size:16.5px;line-height:1.6;color:var(--muted)}
+.band-forest .jlist,.band-forest .jentry{border-color:var(--forest-line)}
+.band-forest .jentry .jt{color:#f1ecdd}
+.band-forest .jentry .jd{color:var(--forest-tx2)}
+
+/* split text + image */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
+.split-fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.split.rev .split-fig{order:-1}
+
+/* full-width image band */
+.figband{position:relative;height:clamp(300px,48vh,540px);overflow:hidden}
+.figband img{width:100%;height:100%;object-fit:cover;filter:saturate(.97)}
+.figband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(22,35,28,.45) 100%)}
+.figband figcaption{position:absolute;left:var(--gut);bottom:24px;z-index:1;font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#f1ecdd}
+.foot .facad{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-top:7px}
+
 /* founder */
 .founder{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,5vw,76px);align-items:start}
 .founder figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
@@ -221,6 +242,9 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
  .menu .applybtn{font-size:14px;padding:13px 26px}
  .courses{grid-template-columns:1fr}
  .row{grid-template-columns:1fr;gap:8px}.row .re{margin-top:4px}
+ .jentry{grid-template-columns:1fr;gap:8px}
+ .split{grid-template-columns:1fr;gap:26px}.split.rev .split-fig{order:0}
+ .figband{height:clamp(220px,38vh,340px)}
  .foot-grid{grid-template-columns:1fr}
  .invest{flex-direction:column;align-items:flex-start}
  .step{grid-template-columns:1fr;gap:6px}.step .sn{padding-top:0}
