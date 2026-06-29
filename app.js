@@ -5,6 +5,13 @@ function appsOpen(){var n=new Date();return n>=COHORT_OPEN&&n<COHORT_CLOSE;}
 function openOv(id){var o=document.getElementById(id);if(o)o.classList.add('show');}
 function mbThanks(f){f.querySelectorAll('input,select,textarea,button').forEach(function(e){e.style.display='none'});
  var t=f.parentNode.querySelector('.thanks');if(t)t.style.display='block';return false;}
+function mbEnquiry(f){
+ var done=function(){f.style.display='none';var t=f.parentNode.querySelector('.enq-thanks');if(t)t.style.display='block';};
+ var key=f.querySelector('[name=access_key]');
+ if(!key||key.value.indexOf('REPLACE')===0){done();return false;} // no key yet: preview only
+ fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)})
+  .then(function(r){return r.json();}).then(done).catch(done);
+ return false;}
 document.addEventListener('DOMContentLoaded',function(){
  var open=appsOpen();
  document.querySelectorAll('.js-apply').forEach(function(b){
