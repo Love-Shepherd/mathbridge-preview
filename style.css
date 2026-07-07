@@ -260,7 +260,7 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .p-inner{display:flex;flex-direction:column;flex:1;align-items:center}
 .p-eyebrow{font-family:'Archivo',sans-serif;font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-ink)}
 .p-rule{width:56px;height:1px;background:var(--gold);margin:56px auto 40px;opacity:.9}
-.p-title{font-family:'Spectral',serif;font-weight:340;font-size:clamp(30px,3.6vw,42px);line-height:1.02;letter-spacing:-.014em;color:var(--ink);margin:0}
+.p-title{font-family:'Spectral',serif;font-weight:340;font-size:clamp(25px,3vw,34px);line-height:1.08;letter-spacing:-.012em;color:var(--ink);margin:0}
 .p-sub{font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--muted);margin-top:20px;font-weight:340;max-width:26ch;line-height:1.4}
 .p-author{font-family:'Spectral',serif;font-style:italic;font-size:16.5px;color:var(--ink2);margin-top:auto;padding-bottom:18px}
 .p-num{position:absolute;bottom:22px;left:0;right:0;font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.28em;color:var(--gold-ink);text-align:center}
