@@ -129,6 +129,11 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .band-forest .jlist,.band-forest .jentry{border-color:var(--forest-line)}
 .band-forest .jentry .jt{color:#f1ecdd}
 .band-forest .jentry .jd{color:var(--forest-tx2)}
+.jessays{margin-top:4px}
+.jessay{padding:20px 0;border-top:1px solid var(--line)}
+.jessay:first-child{border-top:0;padding-top:0}
+.jessay .jt{display:block;font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(20px,2.3vw,26px);line-height:1.14;color:var(--ink);margin:0 0 8px}
+.jessay .jd{display:block;font-size:16px;line-height:1.62;color:var(--ink2);margin:0}
 
 /* split text + image */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
@@ -243,7 +248,7 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .thanks{display:none}
 
 /* Reading Room */
-.reading-featured{display:grid;grid-template-columns:minmax(280px,1fr) 1.15fr;gap:clamp(48px,7vw,110px);align-items:end;max-width:1080px;margin:0 auto}
+.reading-featured{display:grid;grid-template-columns:minmax(280px,1fr) 1.15fr;gap:clamp(48px,7vw,110px);align-items:start;max-width:1080px;margin:0 auto}
 .rf-cover{position:relative;padding:26px 0 10px}
 /* A5 clothbound board, antique-gold foil */
 .pamphlet{
