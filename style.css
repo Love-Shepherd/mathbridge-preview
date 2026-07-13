@@ -30,9 +30,13 @@ header.site::before{content:"";position:absolute;inset:0;z-index:-1;background:r
  -webkit-backdrop-filter:saturate(125%) blur(14px);backdrop-filter:saturate(125%) blur(14px)}
 header.site.scrolled{border-bottom-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;flex-direction:column;line-height:1}
+.brand{display:flex;flex-direction:column;align-items:center;line-height:1}
 .brand .wm{font-family:'Spectral',serif;font-weight:500;font-size:25px;letter-spacing:.004em;color:var(--ink)}
-.brand .sub{font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-ink);margin-top:5px;padding-left:.36em}
+.brand .sub{font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-ink);margin-top:4px;text-indent:.36em}
+.born{display:flex;align-items:center;gap:7px;margin-top:7px}
+.born i{display:block;width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-ink))}
+.born i:last-child{transform:scaleX(-1)}
+.born line{stroke:var(--gold-ink);stroke-width:1.1;stroke-linecap:round}
 .menu{display:flex;align-items:center;gap:32px}
 .navlink{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);position:relative;padding:5px 0;transition:color .3s}
 .navlink::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
@@ -150,6 +154,10 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .jbanner{display:block;width:100%}
 .jbanner img{width:100%;height:auto;display:block}
 .foot .facad{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-top:7px}
+.foot .fborn{display:flex;align-items:center;gap:8px;margin-top:14px}
+.foot .fborn i{display:block;width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l))}
+.foot .fborn i:last-child{transform:scaleX(-1)}
+.foot .fborn line{stroke:var(--gold-l);stroke-width:1.2;stroke-linecap:round}
 
 /* founder */
 .founder{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,5vw,76px);align-items:start}
