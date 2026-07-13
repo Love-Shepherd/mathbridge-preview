@@ -153,9 +153,11 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 /* full uncropped banner (whole image visible) */
 .jbanner{display:block;width:100%}
 .jbanner img{width:100%;height:auto;display:block}
-.foot .facad{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-top:7px}
-.foot .fborn{display:flex;align-items:center;gap:13px;margin-top:14px}
-.foot .fborn i{display:block;width:76px;height:1px;background:linear-gradient(90deg,var(--gold-l),transparent)}
+.foot .facad{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-top:7px;text-indent:.34em}
+.foot .fbrand{display:flex;flex-direction:column;align-items:center;text-align:center}
+.foot .fborn{display:flex;align-items:center;gap:8px;margin-top:14px}
+.foot .fborn i{display:block;width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l))}
+.foot .fborn i:last-child{transform:scaleX(-1)}
 .foot .fborn line{stroke:var(--gold-l);stroke-width:1.2;stroke-linecap:round}
 
 /* founder */
