@@ -1,0 +1,775 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>How you think — IB Physics HL · MathBridge</title><link rel="icon" href="../../../img/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F7F4EC; --paper2:#EFE9DC; --card:#FBF8F1;
+ --ink:#20211C; --ink2:#3a3b33; --muted:#6f6757;
+ --forest:#16231C; --gold:#8A6D22; --gold-ink:#75591a; --gold-l:#c8a44e;
+ --line:#ddd5c4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Newsreader',Georgia,serif;font-optical-sizing:auto;color:var(--ink);background:var(--paper);
+ -webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--paper)}
+
+header.site{border-bottom:1px solid var(--line);background:var(--paper)}
+.nav{max-width:860px;margin:0 auto;padding:20px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .wm{font-family:'Spectral',serif;font-weight:500;font-size:24px;color:var(--ink)}
+.brand .sub{font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-ink);margin-top:4px;text-indent:.36em}
+.sitlab{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+#barwrap{height:2px;background:var(--paper2)}
+#bar{height:2px;background:var(--gold);width:0%;transition:width .4s ease}
+
+main{max-width:860px;margin:0 auto;padding:clamp(30px,6vw,56px) clamp(20px,5vw,40px) 90px}
+.eyebrow{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:16px}
+h1{font-family:'Spectral',Georgia,serif;font-weight:380;font-size:clamp(30px,4.4vw,42px);line-height:1.08;letter-spacing:-.012em;margin-bottom:22px}
+h2{font-family:'Spectral',Georgia,serif;font-weight:420;font-size:clamp(22px,3vw,27px);line-height:1.2;margin-bottom:16px}
+.lede{font-size:clamp(18px,2vw,20.5px);line-height:1.66;color:var(--ink2);font-weight:380;margin-bottom:1.05em}
+p.b{font-size:18px;line-height:1.72;color:var(--ink2);margin-bottom:1.05em}
+.rule{width:44px;height:1px;background:var(--gold-l);margin:26px 0}
+
+.card{background:var(--card);border:1px solid var(--line);padding:clamp(20px,4vw,32px);margin-bottom:22px}
+.qtext{font-size:clamp(19px,2.2vw,21.5px);line-height:1.6;color:var(--ink);font-weight:400;margin-bottom:4px}
+.note{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:block}
+.warnline{border-left:2px solid var(--gold-l);padding:10px 16px;background:var(--card);color:var(--ink2);font-size:17px;margin-bottom:22px}
+
+.opts{list-style:none;margin:18px 0 6px}
+.opts li{margin-bottom:10px}
+.opt{display:flex;gap:12px;align-items:baseline;border:1px solid var(--line);background:#fff;
+ padding:13px 16px;cursor:pointer;font-size:17.5px;line-height:1.5;color:var(--ink2);transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--gold-l)}
+.opt input{accent-color:var(--gold);transform:translateY(1px);flex:none}
+.opt .L{font-family:'Archivo',sans-serif;font-size:12px;color:var(--gold-ink);flex:none;width:14px}
+.opt.on{border-color:var(--gold);background:var(--card)}
+.opt.dis{opacity:.55;cursor:default}
+
+.fl{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);display:block;margin:22px 0 8px}
+textarea,input[type=text]{width:100%;font-family:'Newsreader',Georgia,serif;font-size:17.5px;line-height:1.55;color:var(--ink);
+ background:#fff;border:1px solid var(--line);padding:12px 14px;outline:none}
+textarea:focus,input[type=text]:focus{border-color:var(--gold)}
+textarea{min-height:96px;resize:vertical}
+select{font-family:'Newsreader',Georgia,serif;font-size:16.5px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 10px;outline:none}
+.chcount{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-align:right;margin-top:4px}
+
+.likert{border-top:1px solid var(--line)}
+.lrow{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+.lrow .st{font-size:17px;line-height:1.5;color:var(--ink2);max-width:56ch}
+.lnums{display:flex;gap:14px;flex:none}
+.lnums label{display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Archivo',sans-serif;font-size:11px;color:var(--muted);cursor:pointer}
+.lnums input{accent-color:var(--gold)}
+@media(max-width:640px){.lrow{flex-direction:column;align-items:flex-start;gap:10px}}
+
+.conf{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.conf label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:#fff;padding:10px 14px;
+ cursor:pointer;font-size:16px;color:var(--ink2)}
+.conf label:hover{border-color:var(--gold-l)}
+.conf input{accent-color:var(--gold)}
+.conf label.on{border-color:var(--gold);background:var(--card)}
+
+.btn{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+ border:1px solid var(--ink);background:transparent;color:var(--ink);padding:13px 26px;cursor:pointer;transition:.28s ease}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn[disabled]:hover{background:transparent;color:var(--ink)}
+.btn.solid{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.btn.solid:hover{background:var(--ink)}
+.btnrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.err{color:#8a3b22;font-size:16.5px;margin-top:14px;display:none}
+.err.show{display:block}
+
+.timer{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.tbarw{flex:1;height:3px;background:var(--paper2)}
+.tbar{height:3px;background:var(--gold);width:100%}
+.tnum{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:.12em;color:var(--ink2);min-width:44px;text-align:right}
+
+.sol{border-left:2px solid var(--gold-l);padding:6px 0 6px 20px;margin:18px 0}
+.sol .ln{display:flex;gap:14px;font-size:17.5px;line-height:1.6;color:var(--ink2);padding:6px 0}
+.sol .ln b{font-family:'Archivo',sans-serif;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);flex:none;padding-top:5px;width:52px}
+
+.sortrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sortrow .st{font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.sortrow select{flex:none}
+
+.outwrap{margin-top:26px}
+textarea.out{font-family:ui-monospace,Consolas,monospace;font-size:13px;line-height:1.5;min-height:300px;background:#fff}
+.sent{border-left:2px solid var(--gold);padding:12px 16px;background:var(--card);font-size:17px;color:var(--ink2);margin-top:16px;display:none}
+.sent.show{display:block}
+
+footer{border-top:1px solid var(--line);margin-top:40px}
+footer .in{max-width:860px;margin:0 auto;padding:26px clamp(20px,5vw,40px);
+ font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+</style></head><body><header class="site"><div class="nav"><a class="brand" href="../../../index.html"><span class="wm">MathBridge</span><span class="sub">Academy</span></a><span class="sitlab">Physics · Sitting 2</span></div></header><div id="barwrap"><div id="bar"></div></div><main id="app"></main><footer><div class="in">MathBridge Academy · mathbridge.academy</div></footer><script>const CONTENT = {"sitting": 2, "titleWord": "How you think", "intro": ["About 45 minutes again. Same rules — alone, no notes.", "Calculator allowed in Part 6 only. Part 6 is timed per question; that’s deliberate and it’s fine to not finish an item. Speed is part of what I’m looking at, so please don’t pause it."], "p6": {"title": "Part 6 — Quick maths", "intro": ["Twelve items. Each one is timed and moves on automatically. Calculator allowed. No physics here at all.", "If you can’t get one in the time, that’s fine and it’s useful — don’t stress about it."], "items": [["Make x the subject:  y = (a + bx) / (c − x)", 45], ["Simplify fully:  (3a²b³)² / (9a³b)", 45], ["Solve for both unknowns:  3x + 2y = 12  and  x − y = 1", 45], ["If y ∝ x² / √z, and x is tripled while z is quadrupled, by what factor does y change?", 45], ["Make A the subject:  ln A = ln B − kt", 45], ["Evaluate, giving your answer in standard form:  (2.4 × 10⁵)(3.0 × 10⁻³) / (1.2 × 10⁻²)", 45], ["A right-angled triangle has hypotenuse 20 and one angle of 35° to the horizontal. Find the horizontal and vertical components.", 60], ["Solve for t, where t > 0:  5t² − 3t − 2 = 0", 60], ["Given s = 4t³ − 2t + 7, find ds/dt at t = 2.", 60], ["Evaluate the integral of (6t + 2) with respect to t, between the limits t = 0 and t = 3.", 60], ["Rearrange to make r the subject:  F = GMm / r²", 60], ["Without a calculator: estimate sin(0.02) where 0.02 is in radians.", 60]]}, "p7": {"title": "Part 7 — Saying the same thing two ways", "aIntro": "7a — Turn these sentences into equations. Define any symbols you introduce.", "a": ["The acceleration of the object is directly proportional to the net force on it and inversely proportional to its mass.", "The rate at which the speed of the parachutist increases becomes smaller as her speed grows, and reaches zero at terminal velocity.", "The kinetic energy lost by the trolley is equal to the work done against friction over the distance it travels."], "bIntro": "7b — Turn these equations into physical descriptions. For each: describe a situation it applies to, say what each symbol means physically (not just its name), and then answer the question asked.", "b": ["v² = u² + 2as — If a doubles while everything else stays the same, what happens to v, and why physically?", "F = mv²/r — If r is halved at constant speed, what happens to the force needed, and where does that force actually come from in a real example?", "mgh = ½mv² — Why does the mass disappear from this equation, and what is it telling you about the world?"], "cIntro": ["7c — Sketches. On paper, sketch the shape of these graphs. No numbers, no scale. Mark any intercepts, asymptotes or turning points. Photograph and send with your results."], "c": ["Velocity against time for a ball thrown straight up and caught again at the same height", "Kinetic energy against time for that same ball", "Acceleration against time for a parachutist from jumping to terminal velocity"]}, "p8": {"title": "Part 8 — Find the mistake", "intro": ["Each of these four solutions contains exactly one error. Say which line it’s on and what’s wrong with it.", "You don’t need to work out the correct answer."], "items": [{"stem": "A ball on a string is swung in a vertical circle. Find the minimum speed at the top for the string to stay taut.", "lines": ["At the top, the forces on the ball are the tension T downward and the weight mg downward.", "So T + mg = mv²/r", "The minimum speed is when the ball is only just moving, so v = 0.", "Therefore T = −mg, and the minimum speed is zero."]}, {"stem": "A ball is thrown vertically upward at 20 m s⁻¹. Find the time until it returns to the thrower’s hand. Take g = 9.8 m s⁻².", "lines": ["Taking upward as positive, u = +20 m s⁻¹, a = +9.8 m s⁻²", "At the end, displacement s = 0", "s = ut + ½at² → 0 = 20t + 4.9t²", "t(20 + 4.9t) = 0, so t = −4.08 s", "Ignoring the minus sign, t = 4.08 s"]}, {"stem": "A motor does 450 J of work in 3.0 minutes. Find its average power output.", "lines": ["Power is work done per unit time.", "P = W / t", "P = 450 / 3.0", "P = 150 W"]}, {"stem": "A car of mass 1200 kg travelling at 20 m s⁻¹ brakes with a constant friction force of 6000 N. Find the braking distance.", "lines": ["Work done by friction = loss in kinetic energy", "Fd = ½mv²", "6000 × d = 0.5 × 1200 × 20", "d = 12000 / 6000 = 2.0 m", "The braking distance is 2.0 m."]}]}, "p9": {"title": "Part 9 — What do you think happens?", "intro": ["For each: choose what happens, then choose the reason that best matches your thinking, then say how sure you are.", "Choose the reason that’s actually yours, not the one that sounds most like a textbook.", "You won’t be able to come back to a question once you’ve moved on."], "items": [{"q": "A box is being pushed across a rough floor at a constant velocity. What is the net force on the box?", "a": ["Zero", "Forward, in the direction of motion", "Backward", "Depends on the speed"], "r": ["Constant velocity means no acceleration, so forces balance", "Something must keep pushing it or it would stop, so there’s a net forward force", "Friction always wins eventually so the net force is backward", "Faster motion needs more force so it depends on speed"]}, {"q": "A truck collides head-on with a small car. Which experiences the greater force?", "a": ["The truck", "The car", "Equal on both", "Depends which was moving faster"], "r": ["The truck is heavier so it pushes harder", "Forces in an interaction are always equal and opposite", "The car is damaged more, so it must have had more force on it", "The faster one exerts more force"]}, {"q": "A ball is thrown vertically upward. At the very highest point of its flight, what is its acceleration?", "a": ["Zero", "9.8 m s⁻² downward", "9.8 m s⁻² upward", "Momentarily undefined"], "r": ["The velocity is zero there, so the acceleration must be zero too", "Gravity acts the whole time regardless of the velocity", "It’s about to come back down so acceleration points up", "It’s changing direction so acceleration is undefined at that instant"]}, {"q": "Two balls, one 1 kg and one 5 kg, are released from the same height. Air resistance is negligible. Which lands first?", "a": ["The 1 kg", "The 5 kg", "Same time", "Depends on their size"], "r": ["Heavier objects are pulled harder by gravity so fall faster", "Greater weight is exactly cancelled by greater inertia, so acceleration is the same", "Lighter objects meet less resistance", "Gravity acts equally on everything regardless of anything else"]}, {"q": "A car goes round a circular bend at constant speed. What is the direction of the net force on it?", "a": ["Forward, along the direction of travel", "Toward the centre of the circle", "Away from the centre", "Zero, since the speed is constant"], "r": ["The velocity is changing direction, and that change points inward", "There’s a centrifugal force pushing the car outward", "The car is moving forward so the force is forward", "Constant speed means no acceleration and so no net force"]}, {"q": "A ball is being swung in a horizontal circle on a string. The string suddenly snaps. Which path does the ball take, viewed from above?", "a": ["Continues curving along the same circle", "Flies straight out along the radius, directly away from the centre", "Travels in a straight line along the tangent", "Spirals outward"], "r": ["With no net force it keeps the velocity it had, which was tangential", "The outward force is released and throws it outward along the radius", "It keeps some of the circular motion for a while", "The stored circular motion makes it spiral"]}, {"q": "A block rests on a ramp inclined at 30°. How does the normal force compare with the block’s weight?", "a": ["Equal to the weight", "Less than the weight", "Greater than the weight", "Zero"], "r": ["The normal force always equals the weight", "The normal force balances only the component of weight perpendicular to the surface", "The ramp has to hold up the weight plus stop it sliding", "Newton’s third law makes them equal and opposite"]}, {"q": "A satellite moves in a perfectly circular orbit. How much work does the gravitational force do on it over one full orbit?", "a": ["A large positive amount", "A large negative amount", "Zero", "It depends on the orbital radius"], "r": ["The force is always perpendicular to the motion, so it does no work", "Gravity is pulling it constantly so it must be doing work", "It returns to where it started, but the force still did work on the way", "Bigger orbits mean more work done"]}]}, "p10": {"title": "Part 10 — Answering the question asked", "intro": ["Here is one situation. Answer it five times, once for each instruction. Same physics each time — what changes is what I’m asking you for.", "Notice how much you write for each one."], "situation": "A parachutist jumps from a stationary helicopter. She falls freely for several seconds before opening her parachute. She eventually descends at a constant speed.", "items": ["State the forces acting on the parachutist after the parachute has opened.", "Outline why she reaches a constant speed.", "Explain why her acceleration decreases as her speed increases.", "Deduce what happens to her speed in the moments immediately after the parachute opens.", "Discuss how her motion would differ if she had jumped on the Moon, where there is no atmosphere."]}, "pr": {"title": "Part R — On paper", "intro": ["This last bit isn’t in the form. Do it on plain paper and photograph it.", "For each situation below: draw the situation, draw a free-body diagram for the object named, and mark which direction you’re calling positive.", "There are no numbers, and there’s nothing to calculate. Just the drawings."], "items": ["R1 — A block sliding down a rough ramp. Free-body diagram for the block.", "R2 — A ball at three moments: on the way up, at the top, on the way down, after being thrown vertically. A free-body diagram for each of the three.", "R3 — A car at the top of a humpback bridge. Free-body diagram for the car.", "R4 — Two trolleys, the instant they collide. A free-body diagram for each trolley."]}};</script><script>
+'use strict';
+const C = CONTENT;
+const KEY = 'mbphys_s' + C.sitting + '_v1';
+const W3KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
+
+function load(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ return null; } }
+let state = load() || { name:'', startedAt:new Date().toISOString(), totalSec:0, cur:0, a:{}, d:{} };
+if(!state.d) state.d = {};
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function clean(t){
+  const v = String(t==null?'':t).replace(/\|/g,'/').replace(/[\r\n]+/g,' ').replace(/\s+/g,' ').trim();
+  return v === '' ? 'BLANK' : v;
+}
+const LET = 'ABCDEF';
+
+// ---- screens
+function buildScreens(){
+  const s = [];
+  s.push({k:'intro'});
+  if(C.sitting === 1){
+    s.push({k:'p1'});
+    s.push({k:'card', part:'p2'});
+    C.p2.items.forEach((q,i)=>s.push({k:'p2', i:i}));
+    s.push({k:'p3'});
+    s.push({k:'card', part:'p4'});
+    C.p4.items.forEach((q,i)=>s.push({k:'p4', i:i}));
+    s.push({k:'p5'});
+  } else {
+    s.push({k:'card', part:'p6'});
+    C.p6.items.forEach((q,i)=>s.push({k:'p6', i:i}));
+    s.push({k:'p7a'});
+    s.push({k:'p7b'});
+    s.push({k:'p7c'});
+    s.push({k:'card', part:'p8'});
+    C.p8.items.forEach((q,i)=>s.push({k:'p8', i:i}));
+    s.push({k:'card', part:'p9'});
+    C.p9.items.forEach((q,i)=>s.push({k:'p9', i:i}));
+    s.push({k:'p10'});
+    s.push({k:'pr'});
+  }
+  s.push({k:'gen'});
+  return s;
+}
+const screens = buildScreens();
+if(state.cur >= screens.length) state.cur = screens.length - 1;
+
+const app = document.getElementById('app');
+const bar = document.getElementById('bar');
+let t0 = Date.now();
+let timerInt = null;
+let p3warned = false;
+
+function elapsed(){ return Math.max(0, Math.round((Date.now() - t0) / 1000)); }
+
+function next(){
+  delete state.d[state.cur];
+  state.cur++;
+  save();
+  render();
+}
+function addTime(sec){ state.totalSec = (state.totalSec || 0) + sec; }
+
+function showErr(msg){
+  const e = document.getElementById('err');
+  if(e){ e.textContent = msg; e.classList.add('show'); }
+}
+
+// ---- draft autosave (restores typed work if the tab is closed)
+function bindDraft(){
+  const d = state.d[state.cur] || {};
+  const els = app.querySelectorAll('input[type=text], textarea, select, input[type=radio]');
+  els.forEach(el=>{
+    const key = el.name || el.id;
+    if(!key) return;
+    if(d[key] !== undefined){
+      if(el.type === 'radio'){ if(el.value === d[key]){ el.checked = true; el.dispatchEvent(new Event('change')); } }
+      else el.value = d[key];
+    }
+    const ev = (el.tagName === 'SELECT' || el.type === 'radio') ? 'change' : 'input';
+    el.addEventListener(ev, function(){
+      if(!state.d[state.cur]) state.d[state.cur] = {};
+      state.d[state.cur][key] = el.type === 'radio' ? el.value : el.value;
+      save();
+    });
+  });
+}
+
+// highlight selected .opt / .conf rows
+function bindHighlights(){
+  app.querySelectorAll('.opts').forEach(ul=>{
+    ul.addEventListener('change', function(){
+      ul.querySelectorAll('.opt').forEach(o=>{
+        const r = o.querySelector('input'); o.classList.toggle('on', r && r.checked);
+      });
+    });
+    ul.querySelectorAll('.opt input').forEach(r=>{ if(r.checked) r.closest('.opt').classList.add('on'); });
+  });
+  app.querySelectorAll('.conf').forEach(cw=>{
+    cw.addEventListener('change', function(){
+      cw.querySelectorAll('label').forEach(l=>{
+        const r = l.querySelector('input'); l.classList.toggle('on', r && r.checked);
+      });
+    });
+  });
+}
+
+function radioVal(name){
+  const r = app.querySelector('input[name="' + name + '"]:checked');
+  return r ? r.value : null;
+}
+
+function optList(name, options, letters){
+  let h = '<ul class="opts">';
+  options.forEach((o,i)=>{
+    const v = letters ? LET[i] : String(i+1);
+    h += '<li><label class="opt"><input type="radio" name="' + name + '" value="' + v + '">' +
+         (letters ? '<span class="L">' + LET[i] + '</span>' : '') +
+         '<span>' + esc(o) + '</span></label></li>';
+  });
+  return h + '</ul>';
+}
+
+function confRow(name){
+  let h = '<span class="fl">How sure are you?</span><div class="conf">';
+  [['1','1 · guessing'],['2','2 · fairly sure'],['3','3 · certain']].forEach(p=>{
+    h += '<label><input type="radio" name="' + name + '" value="' + p[0] + '">' + p[1] + '</label>';
+  });
+  return h + '</div>';
+}
+
+function nextBtn(label){
+  return '<div class="btnrow"><button class="btn" id="next">' + (label || 'Continue') + '</button></div>' +
+         '<p class="err" id="err"></p>';
+}
+
+// ---------------------------------------------------------------- renderers
+const R = {};
+
+R.intro = function(){
+  const ps = C.intro.map(p=>'<p class="lede">' + esc(p) + '</p>').join('');
+  app.innerHTML =
+   '<span class="eyebrow">IB Physics · Higher Level · Sitting ' + C.sitting + '</span>' +
+   '<h1>' + esc(C.titleWord) + '.</h1>' + ps +
+   '<div class="rule"></div>' +
+   '<span class="fl">Your name</span>' +
+   '<input type="text" id="sname" autocomplete="name" value="' + esc(state.name) + '">' +
+   nextBtn('Begin') +
+   (state.cur === 0 && Object.keys(state.a).length ?
+     '<p class="b" style="margin-top:26px"><a href="#" id="reset" style="border-bottom:1px solid var(--line)">Start again from the beginning</a></p>' : '');
+  document.getElementById('next').onclick = function(){
+    const n = document.getElementById('sname').value.trim();
+    if(!n){ showErr('Please put your name in first.'); return; }
+    state.name = n;
+    addTime(elapsed());
+    next();
+  };
+  const rs = document.getElementById('reset');
+  if(rs) rs.onclick = function(ev){
+    ev.preventDefault();
+    if(confirm('This clears everything you’ve entered in this sitting. Start again?')){
+      localStorage.removeItem(KEY);
+      state = { name:'', startedAt:new Date().toISOString(), totalSec:0, cur:0, a:{}, d:{} };
+      render();
+    }
+  };
+};
+
+R.card = function(s){
+  const p = C[s.part];
+  const ps = p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('');
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span>' +
+   '<h1>' + esc(p.title.split('—')[1] ? p.title.split('—')[1].trim() : p.title) + '</h1>' + ps + nextBtn('Begin');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+R.p1 = function(){
+  const p = C.p1;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span>' +
+          '<h1>About how you study.</h1>' +
+          '<p class="b">' + esc(p.scale) + '</p><div class="likert">';
+  p.likert.forEach((st,i)=>{
+    const id = '1.' + (i+1);
+    h += '<div class="lrow"><span class="st">' + id + ' ' + esc(st) + '</span><div class="lnums">';
+    for(let v=1; v<=5; v++){
+      h += '<label><input type="radio" name="q' + id + '" value="' + v + '"><span>' + v + '</span></label>';
+    }
+    h += '</div></div>';
+  });
+  h += '</div>';
+  p.sel.forEach(s=>{
+    h += '<div class="rule"></div><p class="qtext">' + s.id + ' ' + esc(s.q) + '</p>' + optList('q' + s.id, s.o, true);
+  });
+  h += '<div class="rule"></div><p class="qtext">' + p.free.id + ' ' + esc(p.free.q) + '</p>' +
+       '<textarea name="q' + p.free.id + '"></textarea>';
+  h += '<div class="rule"></div><p class="qtext">' + p.last.id + ' ' + esc(p.last.q) + '</p>' + optList('q' + p.last.id, p.last.o, true);
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const out = {};
+    let missing = [];
+    p.likert.forEach((st,i)=>{
+      const id = '1.' + (i+1);
+      const v = radioVal('q' + id);
+      if(!v) missing.push(id); else out[id] = v;
+    });
+    p.sel.forEach(s=>{
+      const v = radioVal('q' + s.id);
+      if(!v) missing.push(s.id); else out[s.id] = v;
+    });
+    out['1.19'] = app.querySelector('[name="q1.19"]').value;
+    const v20 = radioVal('q1.20');
+    if(!v20) missing.push('1.20'); else out['1.20'] = v20;
+    if(missing.length){ showErr('Still to answer: ' + missing.join(', ') + '. There are no right answers here — just pick what’s true.'); return; }
+    const sec = elapsed(); addTime(sec);
+    out.sec = sec;
+    state.a.p1 = out;
+    next();
+  };
+};
+
+R.p2 = function(s){
+  const p = C.p2; const i = s.i; const id = '2.' + (i+1);
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="warnline">Do not solve it. No calculations, no numbers.</div>' +
+   '<p class="qtext">' + esc(p.items[i]) + '</p>' +
+   '<span class="fl">What would you reach for first?</span>' +
+   optList('ans', p.options, true) +
+   '<span class="fl">Why? What actually made you pick it — one sentence.</span>' +
+   '<textarea name="why"></textarea>' +
+   confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 2' : 'Next');
+  document.getElementById('next').onclick = function(){
+    const a = radioVal('ans'), w = app.querySelector('[name=why]').value.trim(), c = radioVal('conf');
+    if(!a){ showErr('Pick one of the options first.'); return; }
+    if(!w){ showErr('The why box can’t be empty — it’s the part that matters most. “The wording reminded me of something” is a real answer.'); return; }
+    if(!c){ showErr('Say how sure you are — guessing is a perfectly good answer.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p2) state.a.p2 = {};
+    state.a.p2[id] = {ans:a, why:w, conf:c, sec:sec};
+    next();
+  };
+};
+
+R.p3 = function(){
+  const p = C.p3;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Sorting.</h1>' +
+          p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('');
+  p.items.forEach((it,i)=>{
+    h += '<div class="sortrow"><span class="st">' + (i+1) + '. ' + esc(it) + '</span>' +
+         '<select name="g' + (i+1) + '"><option value="">—</option><option>A</option><option>B</option><option>C</option></select></div>';
+  });
+  ['A','B','C'].forEach(g=>{
+    h += '<span class="fl">Name for Group ' + g + '</span><input type="text" name="label' + g + '">';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const g = {}, counts = {A:0, B:0, C:0};
+    let unassigned = false;
+    p.items.forEach((it,i)=>{
+      const v = app.querySelector('[name=g' + (i+1) + ']').value;
+      if(!v) unassigned = true; else { g[i+1] = v; counts[v]++; }
+    });
+    if(unassigned){ showErr('Every problem needs a group.'); return; }
+    const labels = {};
+    let noLabel = false;
+    ['A','B','C'].forEach(k=>{
+      labels[k] = app.querySelector('[name=label' + k + ']').value.trim();
+      if(!labels[k]) noLabel = true;
+    });
+    if(noLabel){ showErr('Give each group a name in your own words — the names matter as much as the sorting.'); return; }
+    if((counts.A !== 3 || counts.B !== 3 || counts.C !== 3) && !p3warned){
+      p3warned = true;
+      showErr('You’ve made groups of ' + counts.A + ' / ' + counts.B + ' / ' + counts.C + ' — the task asks for three groups of three. Check your sorting, or press Continue again if this is your honest answer.');
+      return;
+    }
+    const sec = elapsed(); addTime(sec);
+    state.a.p3 = {g:g, labels:labels, sec:sec};
+    next();
+  };
+};
+
+R.p4 = function(s){
+  const p = C.p4; const i = s.i; const id = '4.' + (i+1);
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="warnline">' + esc(p.reminder) + '</div>' +
+   '<p class="qtext">' + esc(p.items[i]) + '</p>' +
+   '<span class="fl">Step 1</span><input type="text" name="s1" maxlength="200">' +
+   '<span class="fl">Step 2</span><input type="text" name="s2" maxlength="200">' +
+   nextBtn(i + 1 === p.items.length ? 'Finish Part 4' : 'Next');
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p4) state.a.p4 = {};
+    state.a.p4[id] = {
+      s1: app.querySelector('[name=s1]').value,
+      s2: app.querySelector('[name=s2]').value,
+      sec: sec
+    };
+    next();
+  };
+};
+
+R.p5 = function(){
+  const p = C.p5;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Your own view.</h1>' +
+          '<p class="lede">5.1 ' + esc(p.q1) + '</p>' +
+          '<p class="b">1 = what you’re best at, 5 = what you’re worst at. Use each number once.</p>';
+  p.skills.forEach((sk,i)=>{
+    h += '<div class="sortrow"><span class="st">' + esc(sk[0]) + '</span>' +
+         '<select name="r' + i + '"><option value="">—</option>';
+    for(let v=1; v<=5; v++) h += '<option>' + v + '</option>';
+    h += '</select></div>';
+  });
+  h += '<div class="rule"></div><p class="qtext">5.2 ' + esc(p.q2) + '</p><textarea name="q52"></textarea>' + nextBtn('Finish Part 5');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const ranks = [];
+    for(let i=0; i<p.skills.length; i++){
+      const v = app.querySelector('[name=r' + i + ']').value;
+      if(!v){ showErr('Rank all five — use each number exactly once.'); return; }
+      ranks.push(parseInt(v, 10));
+    }
+    if(new Set(ranks).size !== 5){ showErr('Each number can only be used once — check your ranking.'); return; }
+    const order = [];
+    for(let r=1; r<=5; r++) order.push(p.skills[ranks.indexOf(r)][1]);
+    const sec = elapsed(); addTime(sec);
+    state.a.p5 = {rank:order, '5.2':app.querySelector('[name=q52]').value, sec:sec};
+    next();
+  };
+};
+
+R.p6 = function(s){
+  const p = C.p6; const i = s.i; const id = '6.' + (i+1);
+  const limit = p.items[i][1];
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="timer"><div class="tbarw"><div class="tbar" id="tbar"></div></div><span class="tnum" id="tnum"></span></div>' +
+   '<p class="qtext">' + esc(p.items[i][0]) + '</p>' +
+   '<span class="fl">Your answer</span><input type="text" name="ans" autocomplete="off">' +
+   nextBtn('Submit');
+  const input = app.querySelector('[name=ans]');
+  input.focus();
+  const tb = document.getElementById('tbar'), tn = document.getElementById('tnum');
+  function finish(auto){
+    clearInterval(timerInt); timerInt = null;
+    const sec = auto ? limit : Math.min(limit, elapsed());
+    addTime(sec);
+    if(!state.a.p6) state.a.p6 = {};
+    state.a.p6[id] = {ans:input.value, sec:sec};
+    next();
+  }
+  function tick(){
+    const rem = limit - (Date.now() - t0) / 1000;
+    if(rem <= 0){ finish(true); return; }
+    tb.style.width = (rem / limit * 100) + '%';
+    tn.textContent = '0:' + String(Math.ceil(rem)).padStart(2, '0');
+  }
+  tick();
+  timerInt = setInterval(tick, 200);
+  document.getElementById('next').onclick = function(){ finish(false); };
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') finish(false); });
+};
+
+R.p7a = function(){
+  const p = C.p7;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Saying the same thing two ways.</h1>' +
+          '<p class="lede">' + esc(p.aIntro) + '</p>';
+  p.a.forEach((q,i)=>{
+    h += '<p class="qtext">7a.' + (i+1) + ' ' + esc(q) + '</p><textarea name="a' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p7) state.a.p7 = {};
+    p.a.forEach((q,i)=>{ state.a.p7['7a.' + (i+1)] = app.querySelector('[name=a' + (i+1) + ']').value; });
+    state.a.p7.seca = sec;
+    next();
+  };
+};
+
+R.p7b = function(){
+  const p = C.p7;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span>' +
+          '<p class="lede">' + esc(p.bIntro) + '</p>';
+  p.b.forEach((q,i)=>{
+    h += '<p class="qtext">7b.' + (i+1) + ' ' + esc(q) + '</p><textarea name="b' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p7) state.a.p7 = {};
+    p.b.forEach((q,i)=>{ state.a.p7['7b.' + (i+1)] = app.querySelector('[name=b' + (i+1) + ']').value; });
+    state.a.p7.secb = sec;
+    next();
+  };
+};
+
+R.p7c = function(){
+  const p = C.p7;
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span>' +
+   p.cIntro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+   '<div class="card">' + p.c.map((t,i)=>'<p class="b">' + (i+1) + '. ' + esc(t) + '</p>').join('') + '</div>' +
+   nextBtn('Done — I’ll photograph them');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+R.p8 = function(s){
+  const p = C.p8; const i = s.i; const id = '8.' + (i+1); const it = p.items[i];
+  let h = '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+          '<p class="qtext">' + esc(it.stem) + '</p><div class="sol">';
+  it.lines.forEach((ln,j)=>{
+    h += '<div class="ln"><b>Line ' + (j+1) + '</b><span>' + esc(ln) + '</span></div>';
+  });
+  h += '</div><span class="fl">Which line is wrong?</span><ul class="opts">';
+  it.lines.forEach((ln,j)=>{
+    h += '<li><label class="opt"><input type="radio" name="line" value="' + (j+1) + '"><span>Line ' + (j+1) + '</span></label></li>';
+  });
+  h += '</ul><span class="fl">What’s wrong with it?</span><textarea name="what"></textarea>' +
+       confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 8' : 'Next');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const l = radioVal('line'), w = app.querySelector('[name=what]').value.trim(), c = radioVal('conf');
+    if(!l){ showErr('Pick the line you think is wrong.'); return; }
+    if(!w){ showErr('Say what’s wrong with it — a short phrase is fine.'); return; }
+    if(!c){ showErr('Say how sure you are.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p8) state.a.p8 = {};
+    state.a.p8[id] = {line:l, what:w, conf:c, sec:sec};
+    next();
+  };
+};
+
+R.p9 = function(s){
+  const p = C.p9; const i = s.i; const id = '9.' + (i+1); const it = p.items[i];
+  let h = '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+          '<p class="qtext">' + esc(it.q) + '</p>' +
+          '<span class="fl">What happens?</span>' + optList('ans', it.a, true) +
+          '<div class="btnrow" id="lockrow"><button class="btn" id="lock">Lock my answer</button></div>' +
+          '<div id="tier2" style="display:none">' +
+          '<span class="fl">Which reason is closest to your actual thinking?</span>' + optList('reason', it.r, true) +
+          confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 9' : 'Next') +
+          '</div><p class="err" id="err1"></p>';
+  app.innerHTML = h;
+  const d = state.d[state.cur] || {};
+  function lockNow(){
+    document.getElementById('lockrow').style.display = 'none';
+    document.getElementById('tier2').style.display = 'block';
+    app.querySelectorAll('input[name=ans]').forEach(r=>{
+      r.disabled = true;
+      r.closest('.opt').classList.add('dis');
+      if(r.checked) r.closest('.opt').classList.remove('dis');
+    });
+    if(!state.d[state.cur]) state.d[state.cur] = {};
+    state.d[state.cur].locked = '1';
+    save();
+  }
+  document.getElementById('lock').onclick = function(){
+    if(!radioVal('ans')){
+      const e = document.getElementById('err1');
+      e.textContent = 'Choose what happens first.'; e.classList.add('show');
+      return;
+    }
+    lockNow();
+  };
+  document.getElementById('next').onclick = function(){
+    const a = radioVal('ans'), r = radioVal('reason'), c = radioVal('conf');
+    if(!r){ showErr('Pick the reason that’s actually yours.'); return; }
+    if(!c){ showErr('Say how sure you are.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p9) state.a.p9 = {};
+    state.a.p9[id] = {ans:a, reason:r, conf:c, sec:sec};
+    next();
+  };
+  if(d.locked === '1'){ setTimeout(lockNow, 0); }
+};
+
+R.p10 = function(){
+  const p = C.p10;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Answering the question asked.</h1>' +
+          p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+          '<div class="card"><p class="b" style="margin:0">' + esc(p.situation) + '</p></div>';
+  p.items.forEach((q,i)=>{
+    h += '<p class="qtext">10.' + (i+1) + ' ' + esc(q) + '</p><textarea name="t' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn('Finish Part 10');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    const out = {sec:sec};
+    p.items.forEach((q,i)=>{ out['10.' + (i+1)] = app.querySelector('[name=t' + (i+1) + ']').value; });
+    state.a.p10 = out;
+    next();
+  };
+};
+
+R.pr = function(){
+  const p = C.pr;
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span><h1>On paper.</h1>' +
+   p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+   '<div class="card">' + p.items.map(t=>'<p class="b">' + esc(t) + '</p>').join('') + '</div>' +
+   nextBtn('Done — I’ll photograph them');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+// ---------------------------------------------------------------- output block
+function genBlock(){
+  const L = [];
+  L.push('=== IBPHYS DIAGNOSTIC v1 ===');
+  L.push('STUDENT: ' + (state.name || 'BLANK'));
+  L.push('SITTING: ' + C.sitting);
+  L.push('DATE: ' + new Date().toISOString().slice(0, 10));
+  L.push('TOTAL_ELAPSED_MIN: ' + ((state.totalSec || 0) / 60).toFixed(1));
+  L.push('');
+  if(C.sitting === 1){
+    const p1 = state.a.p1 || {};
+    L.push('[P1]');
+    for(let i=1; i<=20; i++){
+      const id = '1.' + i;
+      L.push(id + '=' + (id === '1.19' ? clean(p1[id]) : (p1[id] || 'BLANK')));
+    }
+    L.push('sec=' + (p1.sec != null ? p1.sec : 'BLANK'));
+    L.push('');
+    L.push('[P2]');
+    for(let i=1; i<=10; i++){
+      const id = '2.' + i;
+      const r = (state.a.p2 || {})[id] || {};
+      L.push(id + '|ans=' + (r.ans || 'BLANK') + '|why=' + clean(r.why) + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p3 = state.a.p3 || {g:{}, labels:{}};
+    const grp = {A:[], B:[], C:[]};
+    for(let i=1; i<=9; i++){ const v = p3.g[i]; if(v) grp[v].push(i); }
+    L.push('[P3]');
+    L.push('groups=A:[' + grp.A.join(',') + '];B:[' + grp.B.join(',') + '];C:[' + grp.C.join(',') + ']');
+    ['A','B','C'].forEach(k=>L.push('label' + k + '=' + clean((p3.labels || {})[k])));
+    L.push('sec=' + (p3.sec != null ? p3.sec : 'BLANK'));
+    L.push('');
+    L.push('[P4]');
+    for(let i=1; i<=4; i++){
+      const id = '4.' + i;
+      const r = (state.a.p4 || {})[id] || {};
+      L.push(id + '|s1=' + clean(r.s1) + '|s2=' + clean(r.s2) + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p5 = state.a.p5 || {};
+    L.push('[P5]');
+    L.push('rank=' + ((p5.rank || []).join(', ') || 'BLANK'));
+    L.push('5.2=' + clean(p5['5.2']));
+    L.push('sec=' + (p5.sec != null ? p5.sec : 'BLANK'));
+  } else {
+    L.push('[P6]');
+    for(let i=1; i<=12; i++){
+      const id = '6.' + i;
+      const r = (state.a.p6 || {})[id] || {};
+      L.push(id + '|ans=' + clean(r.ans) + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p7 = state.a.p7 || {};
+    L.push('[P7]');
+    for(let i=1; i<=3; i++) L.push('7a.' + i + '=' + clean(p7['7a.' + i]));
+    L.push('7a.sec=' + (p7.seca != null ? p7.seca : 'BLANK'));
+    for(let i=1; i<=3; i++) L.push('7b.' + i + '=' + clean(p7['7b.' + i]));
+    L.push('7b.sec=' + (p7.secb != null ? p7.secb : 'BLANK'));
+    L.push('7c=ON_PAPER');
+    L.push('');
+    L.push('[P8]');
+    for(let i=1; i<=4; i++){
+      const id = '8.' + i;
+      const r = (state.a.p8 || {})[id] || {};
+      L.push(id + '|line=' + (r.line || 'BLANK') + '|what=' + clean(r.what) + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    L.push('[P9]');
+    for(let i=1; i<=8; i++){
+      const id = '9.' + i;
+      const r = (state.a.p9 || {})[id] || {};
+      L.push(id + '|ans=' + (r.ans || 'BLANK') + '|reason=' + (r.reason || 'BLANK') + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p10 = state.a.p10 || {};
+    L.push('[P10]');
+    for(let i=1; i<=5; i++) L.push('10.' + i + '=' + clean(p10['10.' + i]));
+    L.push('sec=' + (p10.sec != null ? p10.sec : 'BLANK'));
+    L.push('R=ON_PAPER');
+  }
+  L.push('');
+  L.push('=== END ===');
+  return L.join('\n');
+}
+
+R.gen = function(){
+  const paper = C.sitting === 2 ?
+   '<p class="b">Remember the drawings — photograph your Part 7 sketches and your Part R diagrams and send the photos with this.</p>' : '';
+  app.innerHTML =
+   '<span class="eyebrow">Sitting ' + C.sitting + ' · Finished</span>' +
+   '<h1>That’s everything.</h1>' +
+   '<p class="lede">Press the button, then send me the whole block exactly as it comes out — don’t reformat or tidy it.</p>' + paper +
+   '<div class="btnrow"><button class="btn solid" id="dogen">Generate my results</button></div>' +
+   '<div class="outwrap" id="ow" style="display:none">' +
+   '<textarea class="out" id="out" readonly></textarea>' +
+   '<div class="btnrow">' +
+   '<button class="btn" id="send">Send it to me</button>' +
+   '<button class="btn" id="copy">Copy to clipboard</button>' +
+   '</div><div class="sent" id="status"></div></div>';
+  document.getElementById('dogen').onclick = function(){
+    document.getElementById('out').value = genBlock();
+    document.getElementById('ow').style.display = 'block';
+    save();
+  };
+  document.getElementById('copy').onclick = function(){
+    const o = document.getElementById('out');
+    o.select();
+    let ok = false;
+    try{
+      if(navigator.clipboard){ navigator.clipboard.writeText(o.value); ok = true; }
+      else ok = document.execCommand('copy');
+    }catch(e){ try{ ok = document.execCommand('copy'); }catch(e2){} }
+    const st = document.getElementById('status');
+    st.textContent = ok ? 'Copied. Paste it into a message to me.' : 'Select the block and copy it by hand.';
+    st.classList.add('show');
+  };
+  document.getElementById('send').onclick = function(){
+    const btn = this, st = document.getElementById('status');
+    const block = document.getElementById('out').value;
+    if(!block){ st.textContent = 'Press Generate first.'; st.classList.add('show'); return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    const fd = new FormData();
+    fd.append('access_key', W3KEY);
+    fd.append('subject', 'Physics HL — Sitting ' + C.sitting + ' results: ' + state.name);
+    fd.append('from_name', 'MathBridge site');
+    fd.append('student', state.name);
+    fd.append('sitting', String(C.sitting));
+    fd.append('results', block);
+    fetch('https://api.web3forms.com/submit', {method:'POST', body:fd})
+      .then(r=>r.json())
+      .then(j=>{
+        if(j.success){
+          st.textContent = 'Sent — it’s on its way to me. Keep the copy above just in case.';
+          btn.textContent = 'Sent';
+        } else { throw new Error(); }
+        st.classList.add('show');
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Send it to me';
+        st.textContent = 'That didn’t go through. Copy the block instead and send it to me by email or WhatsApp.';
+        st.classList.add('show');
+      });
+  };
+};
+
+// ---------------------------------------------------------------- render loop
+function render(){
+  if(timerInt){ clearInterval(timerInt); timerInt = null; }
+  t0 = Date.now();
+  p3warned = false;
+  const s = screens[state.cur];
+  bar.style.width = (state.cur / (screens.length - 1) * 100) + '%';
+  R[s.k](s);
+  bindHighlights();
+  bindDraft();
+  window.scrollTo(0, 0);
+}
+render();
+</script></body></html>

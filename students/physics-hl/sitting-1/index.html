@@ -1,0 +1,775 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>How you work — IB Physics HL · MathBridge</title><link rel="icon" href="../../../img/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F7F4EC; --paper2:#EFE9DC; --card:#FBF8F1;
+ --ink:#20211C; --ink2:#3a3b33; --muted:#6f6757;
+ --forest:#16231C; --gold:#8A6D22; --gold-ink:#75591a; --gold-l:#c8a44e;
+ --line:#ddd5c4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Newsreader',Georgia,serif;font-optical-sizing:auto;color:var(--ink);background:var(--paper);
+ -webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--paper)}
+
+header.site{border-bottom:1px solid var(--line);background:var(--paper)}
+.nav{max-width:860px;margin:0 auto;padding:20px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .wm{font-family:'Spectral',serif;font-weight:500;font-size:24px;color:var(--ink)}
+.brand .sub{font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-ink);margin-top:4px;text-indent:.36em}
+.sitlab{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+#barwrap{height:2px;background:var(--paper2)}
+#bar{height:2px;background:var(--gold);width:0%;transition:width .4s ease}
+
+main{max-width:860px;margin:0 auto;padding:clamp(30px,6vw,56px) clamp(20px,5vw,40px) 90px}
+.eyebrow{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:16px}
+h1{font-family:'Spectral',Georgia,serif;font-weight:380;font-size:clamp(30px,4.4vw,42px);line-height:1.08;letter-spacing:-.012em;margin-bottom:22px}
+h2{font-family:'Spectral',Georgia,serif;font-weight:420;font-size:clamp(22px,3vw,27px);line-height:1.2;margin-bottom:16px}
+.lede{font-size:clamp(18px,2vw,20.5px);line-height:1.66;color:var(--ink2);font-weight:380;margin-bottom:1.05em}
+p.b{font-size:18px;line-height:1.72;color:var(--ink2);margin-bottom:1.05em}
+.rule{width:44px;height:1px;background:var(--gold-l);margin:26px 0}
+
+.card{background:var(--card);border:1px solid var(--line);padding:clamp(20px,4vw,32px);margin-bottom:22px}
+.qtext{font-size:clamp(19px,2.2vw,21.5px);line-height:1.6;color:var(--ink);font-weight:400;margin-bottom:4px}
+.note{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:block}
+.warnline{border-left:2px solid var(--gold-l);padding:10px 16px;background:var(--card);color:var(--ink2);font-size:17px;margin-bottom:22px}
+
+.opts{list-style:none;margin:18px 0 6px}
+.opts li{margin-bottom:10px}
+.opt{display:flex;gap:12px;align-items:baseline;border:1px solid var(--line);background:#fff;
+ padding:13px 16px;cursor:pointer;font-size:17.5px;line-height:1.5;color:var(--ink2);transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--gold-l)}
+.opt input{accent-color:var(--gold);transform:translateY(1px);flex:none}
+.opt .L{font-family:'Archivo',sans-serif;font-size:12px;color:var(--gold-ink);flex:none;width:14px}
+.opt.on{border-color:var(--gold);background:var(--card)}
+.opt.dis{opacity:.55;cursor:default}
+
+.fl{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);display:block;margin:22px 0 8px}
+textarea,input[type=text]{width:100%;font-family:'Newsreader',Georgia,serif;font-size:17.5px;line-height:1.55;color:var(--ink);
+ background:#fff;border:1px solid var(--line);padding:12px 14px;outline:none}
+textarea:focus,input[type=text]:focus{border-color:var(--gold)}
+textarea{min-height:96px;resize:vertical}
+select{font-family:'Newsreader',Georgia,serif;font-size:16.5px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 10px;outline:none}
+.chcount{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-align:right;margin-top:4px}
+
+.likert{border-top:1px solid var(--line)}
+.lrow{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+.lrow .st{font-size:17px;line-height:1.5;color:var(--ink2);max-width:56ch}
+.lnums{display:flex;gap:14px;flex:none}
+.lnums label{display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Archivo',sans-serif;font-size:11px;color:var(--muted);cursor:pointer}
+.lnums input{accent-color:var(--gold)}
+@media(max-width:640px){.lrow{flex-direction:column;align-items:flex-start;gap:10px}}
+
+.conf{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.conf label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:#fff;padding:10px 14px;
+ cursor:pointer;font-size:16px;color:var(--ink2)}
+.conf label:hover{border-color:var(--gold-l)}
+.conf input{accent-color:var(--gold)}
+.conf label.on{border-color:var(--gold);background:var(--card)}
+
+.btn{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+ border:1px solid var(--ink);background:transparent;color:var(--ink);padding:13px 26px;cursor:pointer;transition:.28s ease}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn[disabled]:hover{background:transparent;color:var(--ink)}
+.btn.solid{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.btn.solid:hover{background:var(--ink)}
+.btnrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.err{color:#8a3b22;font-size:16.5px;margin-top:14px;display:none}
+.err.show{display:block}
+
+.timer{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.tbarw{flex:1;height:3px;background:var(--paper2)}
+.tbar{height:3px;background:var(--gold);width:100%}
+.tnum{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:.12em;color:var(--ink2);min-width:44px;text-align:right}
+
+.sol{border-left:2px solid var(--gold-l);padding:6px 0 6px 20px;margin:18px 0}
+.sol .ln{display:flex;gap:14px;font-size:17.5px;line-height:1.6;color:var(--ink2);padding:6px 0}
+.sol .ln b{font-family:'Archivo',sans-serif;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);flex:none;padding-top:5px;width:52px}
+
+.sortrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sortrow .st{font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.sortrow select{flex:none}
+
+.outwrap{margin-top:26px}
+textarea.out{font-family:ui-monospace,Consolas,monospace;font-size:13px;line-height:1.5;min-height:300px;background:#fff}
+.sent{border-left:2px solid var(--gold);padding:12px 16px;background:var(--card);font-size:17px;color:var(--ink2);margin-top:16px;display:none}
+.sent.show{display:block}
+
+footer{border-top:1px solid var(--line);margin-top:40px}
+footer .in{max-width:860px;margin:0 auto;padding:26px clamp(20px,5vw,40px);
+ font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+</style></head><body><header class="site"><div class="nav"><a class="brand" href="../../../index.html"><span class="wm">MathBridge</span><span class="sub">Academy</span></a><span class="sitlab">Physics · Sitting 1</span></div></header><div id="barwrap"><div id="bar"></div></div><main id="app"></main><footer><div class="in">MathBridge Academy · mathbridge.academy</div></footer><script>const CONTENT = {"sitting": 1, "titleWord": "How you work", "intro": ["This takes about 45 minutes. It isn’t marked and there’s no score at the end.", "I’m trying to understand how you approach physics, not how much you know. Some parts deliberately ask you not to solve anything. That’s not a trick — the way you start a problem tells me more than the answer does.", "Work alone, no notes, no calculator in this sitting. Be honest rather than impressive. If you don’t know, say so."], "p1": {"title": "Part 1 — About how you study", "scale": "Rate 1 to 5, where 1 = never / strongly disagree and 5 = always / strongly agree.", "likert": ["When I read a worked solution, I feel like I understand it.", "A day later, I could reproduce that solution without looking.", "When I revise, I mostly read through notes and worked examples.", "When I revise, I mostly attempt questions before checking anything.", "I attempt questions before I feel ready.", "I wait until I feel I understand the topic properly before attempting questions.", "When I get a question wrong, I read the answer and move on.", "When I get a question wrong, I work out why I chose what I chose.", "I usually know which topic a question is from before I start it.", "In a real paper, I often can’t tell which topic a question belongs to.", "I can usually tell whether my final answer is sensible.", "I check my answers by re-reading the question.", "I run out of time in physics tests.", "I freeze when a question is worded in a way I haven’t seen.", "I think I could get good at this if I worked the right way."], "sel": [{"id": "1.16", "q": "When you practise questions, where do they usually come from? (select one)", "o": ["End of the chapter I’m currently studying", "Topic-specific past paper questions", "Full past papers, mixed topics", "Whatever my teacher sets", "I don’t do many practice questions"]}, {"id": "1.17", "q": "When you sit down with a hard question and get stuck, roughly how long before you give up or look at the answer? (select one)", "o": ["Under a minute", "1–3 minutes", "3–10 minutes", "Over 10 minutes", "I don’t usually get as far as being stuck — I don’t know how to start"]}, {"id": "1.18", "q": "Think about the last physics question you couldn’t do. At what point did it go wrong? (select one)", "o": ["I read it and had no idea what it was even about", "I understood the situation but didn’t know which physics to use", "I knew which physics to use but couldn’t set it up", "I set it up but couldn’t do the maths", "I got an answer but it was wrong and I don’t know why"]}], "free": {"id": "1.19", "q": "Describe that question and what happened, in your own words. Two or three sentences."}, "last": {"id": "1.20", "q": "When you see the worked solution to a question you couldn’t do, which is closest to your reaction? (select one)", "o": ["“Obviously — I knew that”", "“I understand it now, but I’d never have started that way”", "“Where did that step come from?”", "“I still don’t follow it”"]}}, "p2": {"title": "Part 2 — What would you use?", "intro": ["Ten short situations. Do not solve any of them. No calculations, no numbers.", "For each one: pick the physics you would reach for first, say why in one sentence, and tell me how sure you are.", "The “why” matters more than the choice. Write what actually made you pick it, even if that’s “the wording reminded me of something” — that’s a real and useful answer.", "You won’t be able to come back to a question once you’ve moved on."], "options": ["Newton’s second law — resolve the forces", "Conservation of momentum", "Conservation of energy / work–energy", "The kinematic (suvat) equations", "Impulse and change of momentum", "More than one, in sequence — say which, in order, in the box"], "items": ["A block is released from rest at the top of a smooth ramp of height h. The angle of the ramp is not given. Find its speed at the bottom.", "A block is released from rest on a smooth ramp inclined at 30° to the horizontal. Find its acceleration down the slope.", "A trolley moving at 3.0 m s⁻¹ collides with a stationary trolley of twice its mass. They stick together. Find the kinetic energy lost in the collision.", "A car of mass 1200 kg accelerates uniformly from rest to 25 m s⁻¹ in 8.0 s. Find the average power developed.", "A ball of mass 0.15 kg strikes a wall at 12 m s⁻¹ and rebounds at 9.0 m s⁻¹. It is in contact with the wall for 0.020 s. Find the average force on the ball.", "A ball attached to a string is swung in a vertical circle. Find the minimum speed it can have at the top of the circle while the string stays taut.", "A firework is launched, and at the highest point of its flight it explodes into two unequal fragments. Find the velocity of the smaller fragment given the velocity of the larger.", "A car travelling at 20 m s⁻¹ brakes to rest. The braking distance is measured. Find the average braking force.", "A ball is thrown vertically upward with a speed of 15 m s⁻¹. Find the time it takes to reach its highest point.", "Two carts of different masses are held together with a compressed spring between them, then released on a frictionless track. Find the ratio of their speeds after release."]}, "p3": {"title": "Part 3 — Sorting", "intro": ["Below are nine problems. Don’t solve them.", "Sort them into three groups of three, based on how you would go about solving them — not on what the objects are. Then give each group a name in your own words."], "items": ["A block is released from rest on a smooth incline of height h. Find its speed at the bottom.", "A block sits on a smooth incline of angle 25°. Find its acceleration.", "A cart rolls from rest down a smooth incline and then collides with a stationary cart on the flat, sticking to it. Find their common speed after the collision.", "Two trolleys moving toward each other collide and stick together. Find their final velocity.", "A ball bounces off a wall. Given the contact time, find the average force exerted on it.", "Two gliders collide on an air track and stick together. Find how much kinetic energy was lost.", "A mass is pressed against a spring, compressing it, then released on a frictionless surface. Find its maximum speed.", "A mass hangs at rest from a vertical spring. Find the extension of the spring.", "Two carts are pushed apart by a compressed spring between them and released from rest. Find the ratio of their speeds."]}, "p4": {"title": "Part 4 — How would you start?", "intro": ["Four questions. Do not solve them. Do not work anything out.", "Write only the first two steps of what you would do. Then stop.", "“Step 1: draw a diagram” is allowed if that’s genuinely what you’d do — but say what you’d put on it."], "reminder": "Do not solve it. Do not work anything out. First two steps only.", "items": ["A skier of mass 65 kg starts from rest and slides 40 m down a slope inclined at 20°. The friction force is 90 N. Find her speed at the bottom.", "A 0.25 kg ball is dropped from 2.0 m onto a floor and rebounds to 1.4 m. The contact time with the floor is 0.015 s. Find the average force exerted by the floor on the ball.", "A car of mass 950 kg travels over a humpback bridge whose top is an arc of radius 32 m. Find the maximum speed at which the car can cross without leaving the road.", "A trolley of mass 2.0 kg moving at 4.0 m s⁻¹ collides with a stationary trolley of mass 3.0 kg. After the collision the 2.0 kg trolley continues forward at 0.8 m s⁻¹. Find whether the collision was elastic."]}, "p5": {"title": "Part 5 — Your own view", "q1": "Rank these from best at to worst at, in your honest opinion:", "skills": [["Reading a question and understanding the situation", "Reading the situation"], ["Drawing a useful diagram", "Drawing a diagram"], ["Choosing the right physics to use", "Choosing the physics"], ["Doing the algebra and the numbers", "Algebra and numbers"], ["Checking whether an answer is sensible", "Checking the answer"]], "q2": "If you had to name the one thing that’s actually stopping you, what would you say it is?"}};</script><script>
+'use strict';
+const C = CONTENT;
+const KEY = 'mbphys_s' + C.sitting + '_v1';
+const W3KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
+
+function load(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ return null; } }
+let state = load() || { name:'', startedAt:new Date().toISOString(), totalSec:0, cur:0, a:{}, d:{} };
+if(!state.d) state.d = {};
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function clean(t){
+  const v = String(t==null?'':t).replace(/\|/g,'/').replace(/[\r\n]+/g,' ').replace(/\s+/g,' ').trim();
+  return v === '' ? 'BLANK' : v;
+}
+const LET = 'ABCDEF';
+
+// ---- screens
+function buildScreens(){
+  const s = [];
+  s.push({k:'intro'});
+  if(C.sitting === 1){
+    s.push({k:'p1'});
+    s.push({k:'card', part:'p2'});
+    C.p2.items.forEach((q,i)=>s.push({k:'p2', i:i}));
+    s.push({k:'p3'});
+    s.push({k:'card', part:'p4'});
+    C.p4.items.forEach((q,i)=>s.push({k:'p4', i:i}));
+    s.push({k:'p5'});
+  } else {
+    s.push({k:'card', part:'p6'});
+    C.p6.items.forEach((q,i)=>s.push({k:'p6', i:i}));
+    s.push({k:'p7a'});
+    s.push({k:'p7b'});
+    s.push({k:'p7c'});
+    s.push({k:'card', part:'p8'});
+    C.p8.items.forEach((q,i)=>s.push({k:'p8', i:i}));
+    s.push({k:'card', part:'p9'});
+    C.p9.items.forEach((q,i)=>s.push({k:'p9', i:i}));
+    s.push({k:'p10'});
+    s.push({k:'pr'});
+  }
+  s.push({k:'gen'});
+  return s;
+}
+const screens = buildScreens();
+if(state.cur >= screens.length) state.cur = screens.length - 1;
+
+const app = document.getElementById('app');
+const bar = document.getElementById('bar');
+let t0 = Date.now();
+let timerInt = null;
+let p3warned = false;
+
+function elapsed(){ return Math.max(0, Math.round((Date.now() - t0) / 1000)); }
+
+function next(){
+  delete state.d[state.cur];
+  state.cur++;
+  save();
+  render();
+}
+function addTime(sec){ state.totalSec = (state.totalSec || 0) + sec; }
+
+function showErr(msg){
+  const e = document.getElementById('err');
+  if(e){ e.textContent = msg; e.classList.add('show'); }
+}
+
+// ---- draft autosave (restores typed work if the tab is closed)
+function bindDraft(){
+  const d = state.d[state.cur] || {};
+  const els = app.querySelectorAll('input[type=text], textarea, select, input[type=radio]');
+  els.forEach(el=>{
+    const key = el.name || el.id;
+    if(!key) return;
+    if(d[key] !== undefined){
+      if(el.type === 'radio'){ if(el.value === d[key]){ el.checked = true; el.dispatchEvent(new Event('change')); } }
+      else el.value = d[key];
+    }
+    const ev = (el.tagName === 'SELECT' || el.type === 'radio') ? 'change' : 'input';
+    el.addEventListener(ev, function(){
+      if(!state.d[state.cur]) state.d[state.cur] = {};
+      state.d[state.cur][key] = el.type === 'radio' ? el.value : el.value;
+      save();
+    });
+  });
+}
+
+// highlight selected .opt / .conf rows
+function bindHighlights(){
+  app.querySelectorAll('.opts').forEach(ul=>{
+    ul.addEventListener('change', function(){
+      ul.querySelectorAll('.opt').forEach(o=>{
+        const r = o.querySelector('input'); o.classList.toggle('on', r && r.checked);
+      });
+    });
+    ul.querySelectorAll('.opt input').forEach(r=>{ if(r.checked) r.closest('.opt').classList.add('on'); });
+  });
+  app.querySelectorAll('.conf').forEach(cw=>{
+    cw.addEventListener('change', function(){
+      cw.querySelectorAll('label').forEach(l=>{
+        const r = l.querySelector('input'); l.classList.toggle('on', r && r.checked);
+      });
+    });
+  });
+}
+
+function radioVal(name){
+  const r = app.querySelector('input[name="' + name + '"]:checked');
+  return r ? r.value : null;
+}
+
+function optList(name, options, letters){
+  let h = '<ul class="opts">';
+  options.forEach((o,i)=>{
+    const v = letters ? LET[i] : String(i+1);
+    h += '<li><label class="opt"><input type="radio" name="' + name + '" value="' + v + '">' +
+         (letters ? '<span class="L">' + LET[i] + '</span>' : '') +
+         '<span>' + esc(o) + '</span></label></li>';
+  });
+  return h + '</ul>';
+}
+
+function confRow(name){
+  let h = '<span class="fl">How sure are you?</span><div class="conf">';
+  [['1','1 · guessing'],['2','2 · fairly sure'],['3','3 · certain']].forEach(p=>{
+    h += '<label><input type="radio" name="' + name + '" value="' + p[0] + '">' + p[1] + '</label>';
+  });
+  return h + '</div>';
+}
+
+function nextBtn(label){
+  return '<div class="btnrow"><button class="btn" id="next">' + (label || 'Continue') + '</button></div>' +
+         '<p class="err" id="err"></p>';
+}
+
+// ---------------------------------------------------------------- renderers
+const R = {};
+
+R.intro = function(){
+  const ps = C.intro.map(p=>'<p class="lede">' + esc(p) + '</p>').join('');
+  app.innerHTML =
+   '<span class="eyebrow">IB Physics · Higher Level · Sitting ' + C.sitting + '</span>' +
+   '<h1>' + esc(C.titleWord) + '.</h1>' + ps +
+   '<div class="rule"></div>' +
+   '<span class="fl">Your name</span>' +
+   '<input type="text" id="sname" autocomplete="name" value="' + esc(state.name) + '">' +
+   nextBtn('Begin') +
+   (state.cur === 0 && Object.keys(state.a).length ?
+     '<p class="b" style="margin-top:26px"><a href="#" id="reset" style="border-bottom:1px solid var(--line)">Start again from the beginning</a></p>' : '');
+  document.getElementById('next').onclick = function(){
+    const n = document.getElementById('sname').value.trim();
+    if(!n){ showErr('Please put your name in first.'); return; }
+    state.name = n;
+    addTime(elapsed());
+    next();
+  };
+  const rs = document.getElementById('reset');
+  if(rs) rs.onclick = function(ev){
+    ev.preventDefault();
+    if(confirm('This clears everything you’ve entered in this sitting. Start again?')){
+      localStorage.removeItem(KEY);
+      state = { name:'', startedAt:new Date().toISOString(), totalSec:0, cur:0, a:{}, d:{} };
+      render();
+    }
+  };
+};
+
+R.card = function(s){
+  const p = C[s.part];
+  const ps = p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('');
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span>' +
+   '<h1>' + esc(p.title.split('—')[1] ? p.title.split('—')[1].trim() : p.title) + '</h1>' + ps + nextBtn('Begin');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+R.p1 = function(){
+  const p = C.p1;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span>' +
+          '<h1>About how you study.</h1>' +
+          '<p class="b">' + esc(p.scale) + '</p><div class="likert">';
+  p.likert.forEach((st,i)=>{
+    const id = '1.' + (i+1);
+    h += '<div class="lrow"><span class="st">' + id + ' ' + esc(st) + '</span><div class="lnums">';
+    for(let v=1; v<=5; v++){
+      h += '<label><input type="radio" name="q' + id + '" value="' + v + '"><span>' + v + '</span></label>';
+    }
+    h += '</div></div>';
+  });
+  h += '</div>';
+  p.sel.forEach(s=>{
+    h += '<div class="rule"></div><p class="qtext">' + s.id + ' ' + esc(s.q) + '</p>' + optList('q' + s.id, s.o, true);
+  });
+  h += '<div class="rule"></div><p class="qtext">' + p.free.id + ' ' + esc(p.free.q) + '</p>' +
+       '<textarea name="q' + p.free.id + '"></textarea>';
+  h += '<div class="rule"></div><p class="qtext">' + p.last.id + ' ' + esc(p.last.q) + '</p>' + optList('q' + p.last.id, p.last.o, true);
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const out = {};
+    let missing = [];
+    p.likert.forEach((st,i)=>{
+      const id = '1.' + (i+1);
+      const v = radioVal('q' + id);
+      if(!v) missing.push(id); else out[id] = v;
+    });
+    p.sel.forEach(s=>{
+      const v = radioVal('q' + s.id);
+      if(!v) missing.push(s.id); else out[s.id] = v;
+    });
+    out['1.19'] = app.querySelector('[name="q1.19"]').value;
+    const v20 = radioVal('q1.20');
+    if(!v20) missing.push('1.20'); else out['1.20'] = v20;
+    if(missing.length){ showErr('Still to answer: ' + missing.join(', ') + '. There are no right answers here — just pick what’s true.'); return; }
+    const sec = elapsed(); addTime(sec);
+    out.sec = sec;
+    state.a.p1 = out;
+    next();
+  };
+};
+
+R.p2 = function(s){
+  const p = C.p2; const i = s.i; const id = '2.' + (i+1);
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="warnline">Do not solve it. No calculations, no numbers.</div>' +
+   '<p class="qtext">' + esc(p.items[i]) + '</p>' +
+   '<span class="fl">What would you reach for first?</span>' +
+   optList('ans', p.options, true) +
+   '<span class="fl">Why? What actually made you pick it — one sentence.</span>' +
+   '<textarea name="why"></textarea>' +
+   confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 2' : 'Next');
+  document.getElementById('next').onclick = function(){
+    const a = radioVal('ans'), w = app.querySelector('[name=why]').value.trim(), c = radioVal('conf');
+    if(!a){ showErr('Pick one of the options first.'); return; }
+    if(!w){ showErr('The why box can’t be empty — it’s the part that matters most. “The wording reminded me of something” is a real answer.'); return; }
+    if(!c){ showErr('Say how sure you are — guessing is a perfectly good answer.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p2) state.a.p2 = {};
+    state.a.p2[id] = {ans:a, why:w, conf:c, sec:sec};
+    next();
+  };
+};
+
+R.p3 = function(){
+  const p = C.p3;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Sorting.</h1>' +
+          p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('');
+  p.items.forEach((it,i)=>{
+    h += '<div class="sortrow"><span class="st">' + (i+1) + '. ' + esc(it) + '</span>' +
+         '<select name="g' + (i+1) + '"><option value="">—</option><option>A</option><option>B</option><option>C</option></select></div>';
+  });
+  ['A','B','C'].forEach(g=>{
+    h += '<span class="fl">Name for Group ' + g + '</span><input type="text" name="label' + g + '">';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const g = {}, counts = {A:0, B:0, C:0};
+    let unassigned = false;
+    p.items.forEach((it,i)=>{
+      const v = app.querySelector('[name=g' + (i+1) + ']').value;
+      if(!v) unassigned = true; else { g[i+1] = v; counts[v]++; }
+    });
+    if(unassigned){ showErr('Every problem needs a group.'); return; }
+    const labels = {};
+    let noLabel = false;
+    ['A','B','C'].forEach(k=>{
+      labels[k] = app.querySelector('[name=label' + k + ']').value.trim();
+      if(!labels[k]) noLabel = true;
+    });
+    if(noLabel){ showErr('Give each group a name in your own words — the names matter as much as the sorting.'); return; }
+    if((counts.A !== 3 || counts.B !== 3 || counts.C !== 3) && !p3warned){
+      p3warned = true;
+      showErr('You’ve made groups of ' + counts.A + ' / ' + counts.B + ' / ' + counts.C + ' — the task asks for three groups of three. Check your sorting, or press Continue again if this is your honest answer.');
+      return;
+    }
+    const sec = elapsed(); addTime(sec);
+    state.a.p3 = {g:g, labels:labels, sec:sec};
+    next();
+  };
+};
+
+R.p4 = function(s){
+  const p = C.p4; const i = s.i; const id = '4.' + (i+1);
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="warnline">' + esc(p.reminder) + '</div>' +
+   '<p class="qtext">' + esc(p.items[i]) + '</p>' +
+   '<span class="fl">Step 1</span><input type="text" name="s1" maxlength="200">' +
+   '<span class="fl">Step 2</span><input type="text" name="s2" maxlength="200">' +
+   nextBtn(i + 1 === p.items.length ? 'Finish Part 4' : 'Next');
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p4) state.a.p4 = {};
+    state.a.p4[id] = {
+      s1: app.querySelector('[name=s1]').value,
+      s2: app.querySelector('[name=s2]').value,
+      sec: sec
+    };
+    next();
+  };
+};
+
+R.p5 = function(){
+  const p = C.p5;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Your own view.</h1>' +
+          '<p class="lede">5.1 ' + esc(p.q1) + '</p>' +
+          '<p class="b">1 = what you’re best at, 5 = what you’re worst at. Use each number once.</p>';
+  p.skills.forEach((sk,i)=>{
+    h += '<div class="sortrow"><span class="st">' + esc(sk[0]) + '</span>' +
+         '<select name="r' + i + '"><option value="">—</option>';
+    for(let v=1; v<=5; v++) h += '<option>' + v + '</option>';
+    h += '</select></div>';
+  });
+  h += '<div class="rule"></div><p class="qtext">5.2 ' + esc(p.q2) + '</p><textarea name="q52"></textarea>' + nextBtn('Finish Part 5');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const ranks = [];
+    for(let i=0; i<p.skills.length; i++){
+      const v = app.querySelector('[name=r' + i + ']').value;
+      if(!v){ showErr('Rank all five — use each number exactly once.'); return; }
+      ranks.push(parseInt(v, 10));
+    }
+    if(new Set(ranks).size !== 5){ showErr('Each number can only be used once — check your ranking.'); return; }
+    const order = [];
+    for(let r=1; r<=5; r++) order.push(p.skills[ranks.indexOf(r)][1]);
+    const sec = elapsed(); addTime(sec);
+    state.a.p5 = {rank:order, '5.2':app.querySelector('[name=q52]').value, sec:sec};
+    next();
+  };
+};
+
+R.p6 = function(s){
+  const p = C.p6; const i = s.i; const id = '6.' + (i+1);
+  const limit = p.items[i][1];
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+   '<div class="timer"><div class="tbarw"><div class="tbar" id="tbar"></div></div><span class="tnum" id="tnum"></span></div>' +
+   '<p class="qtext">' + esc(p.items[i][0]) + '</p>' +
+   '<span class="fl">Your answer</span><input type="text" name="ans" autocomplete="off">' +
+   nextBtn('Submit');
+  const input = app.querySelector('[name=ans]');
+  input.focus();
+  const tb = document.getElementById('tbar'), tn = document.getElementById('tnum');
+  function finish(auto){
+    clearInterval(timerInt); timerInt = null;
+    const sec = auto ? limit : Math.min(limit, elapsed());
+    addTime(sec);
+    if(!state.a.p6) state.a.p6 = {};
+    state.a.p6[id] = {ans:input.value, sec:sec};
+    next();
+  }
+  function tick(){
+    const rem = limit - (Date.now() - t0) / 1000;
+    if(rem <= 0){ finish(true); return; }
+    tb.style.width = (rem / limit * 100) + '%';
+    tn.textContent = '0:' + String(Math.ceil(rem)).padStart(2, '0');
+  }
+  tick();
+  timerInt = setInterval(tick, 200);
+  document.getElementById('next').onclick = function(){ finish(false); };
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') finish(false); });
+};
+
+R.p7a = function(){
+  const p = C.p7;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Saying the same thing two ways.</h1>' +
+          '<p class="lede">' + esc(p.aIntro) + '</p>';
+  p.a.forEach((q,i)=>{
+    h += '<p class="qtext">7a.' + (i+1) + ' ' + esc(q) + '</p><textarea name="a' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p7) state.a.p7 = {};
+    p.a.forEach((q,i)=>{ state.a.p7['7a.' + (i+1)] = app.querySelector('[name=a' + (i+1) + ']').value; });
+    state.a.p7.seca = sec;
+    next();
+  };
+};
+
+R.p7b = function(){
+  const p = C.p7;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span>' +
+          '<p class="lede">' + esc(p.bIntro) + '</p>';
+  p.b.forEach((q,i)=>{
+    h += '<p class="qtext">7b.' + (i+1) + ' ' + esc(q) + '</p><textarea name="b' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn();
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p7) state.a.p7 = {};
+    p.b.forEach((q,i)=>{ state.a.p7['7b.' + (i+1)] = app.querySelector('[name=b' + (i+1) + ']').value; });
+    state.a.p7.secb = sec;
+    next();
+  };
+};
+
+R.p7c = function(){
+  const p = C.p7;
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span>' +
+   p.cIntro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+   '<div class="card">' + p.c.map((t,i)=>'<p class="b">' + (i+1) + '. ' + esc(t) + '</p>').join('') + '</div>' +
+   nextBtn('Done — I’ll photograph them');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+R.p8 = function(s){
+  const p = C.p8; const i = s.i; const id = '8.' + (i+1); const it = p.items[i];
+  let h = '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+          '<p class="qtext">' + esc(it.stem) + '</p><div class="sol">';
+  it.lines.forEach((ln,j)=>{
+    h += '<div class="ln"><b>Line ' + (j+1) + '</b><span>' + esc(ln) + '</span></div>';
+  });
+  h += '</div><span class="fl">Which line is wrong?</span><ul class="opts">';
+  it.lines.forEach((ln,j)=>{
+    h += '<li><label class="opt"><input type="radio" name="line" value="' + (j+1) + '"><span>Line ' + (j+1) + '</span></label></li>';
+  });
+  h += '</ul><span class="fl">What’s wrong with it?</span><textarea name="what"></textarea>' +
+       confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 8' : 'Next');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const l = radioVal('line'), w = app.querySelector('[name=what]').value.trim(), c = radioVal('conf');
+    if(!l){ showErr('Pick the line you think is wrong.'); return; }
+    if(!w){ showErr('Say what’s wrong with it — a short phrase is fine.'); return; }
+    if(!c){ showErr('Say how sure you are.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p8) state.a.p8 = {};
+    state.a.p8[id] = {line:l, what:w, conf:c, sec:sec};
+    next();
+  };
+};
+
+R.p9 = function(s){
+  const p = C.p9; const i = s.i; const id = '9.' + (i+1); const it = p.items[i];
+  let h = '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
+          '<p class="qtext">' + esc(it.q) + '</p>' +
+          '<span class="fl">What happens?</span>' + optList('ans', it.a, true) +
+          '<div class="btnrow" id="lockrow"><button class="btn" id="lock">Lock my answer</button></div>' +
+          '<div id="tier2" style="display:none">' +
+          '<span class="fl">Which reason is closest to your actual thinking?</span>' + optList('reason', it.r, true) +
+          confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 9' : 'Next') +
+          '</div><p class="err" id="err1"></p>';
+  app.innerHTML = h;
+  const d = state.d[state.cur] || {};
+  function lockNow(){
+    document.getElementById('lockrow').style.display = 'none';
+    document.getElementById('tier2').style.display = 'block';
+    app.querySelectorAll('input[name=ans]').forEach(r=>{
+      r.disabled = true;
+      r.closest('.opt').classList.add('dis');
+      if(r.checked) r.closest('.opt').classList.remove('dis');
+    });
+    if(!state.d[state.cur]) state.d[state.cur] = {};
+    state.d[state.cur].locked = '1';
+    save();
+  }
+  document.getElementById('lock').onclick = function(){
+    if(!radioVal('ans')){
+      const e = document.getElementById('err1');
+      e.textContent = 'Choose what happens first.'; e.classList.add('show');
+      return;
+    }
+    lockNow();
+  };
+  document.getElementById('next').onclick = function(){
+    const a = radioVal('ans'), r = radioVal('reason'), c = radioVal('conf');
+    if(!r){ showErr('Pick the reason that’s actually yours.'); return; }
+    if(!c){ showErr('Say how sure you are.'); return; }
+    const sec = elapsed(); addTime(sec);
+    if(!state.a.p9) state.a.p9 = {};
+    state.a.p9[id] = {ans:a, reason:r, conf:c, sec:sec};
+    next();
+  };
+  if(d.locked === '1'){ setTimeout(lockNow, 0); }
+};
+
+R.p10 = function(){
+  const p = C.p10;
+  let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Answering the question asked.</h1>' +
+          p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+          '<div class="card"><p class="b" style="margin:0">' + esc(p.situation) + '</p></div>';
+  p.items.forEach((q,i)=>{
+    h += '<p class="qtext">10.' + (i+1) + ' ' + esc(q) + '</p><textarea name="t' + (i+1) + '"></textarea><div style="height:18px"></div>';
+  });
+  h += nextBtn('Finish Part 10');
+  app.innerHTML = h;
+  document.getElementById('next').onclick = function(){
+    const sec = elapsed(); addTime(sec);
+    const out = {sec:sec};
+    p.items.forEach((q,i)=>{ out['10.' + (i+1)] = app.querySelector('[name=t' + (i+1) + ']').value; });
+    state.a.p10 = out;
+    next();
+  };
+};
+
+R.pr = function(){
+  const p = C.pr;
+  app.innerHTML =
+   '<span class="eyebrow">' + esc(p.title) + '</span><h1>On paper.</h1>' +
+   p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
+   '<div class="card">' + p.items.map(t=>'<p class="b">' + esc(t) + '</p>').join('') + '</div>' +
+   nextBtn('Done — I’ll photograph them');
+  document.getElementById('next').onclick = function(){ addTime(elapsed()); next(); };
+};
+
+// ---------------------------------------------------------------- output block
+function genBlock(){
+  const L = [];
+  L.push('=== IBPHYS DIAGNOSTIC v1 ===');
+  L.push('STUDENT: ' + (state.name || 'BLANK'));
+  L.push('SITTING: ' + C.sitting);
+  L.push('DATE: ' + new Date().toISOString().slice(0, 10));
+  L.push('TOTAL_ELAPSED_MIN: ' + ((state.totalSec || 0) / 60).toFixed(1));
+  L.push('');
+  if(C.sitting === 1){
+    const p1 = state.a.p1 || {};
+    L.push('[P1]');
+    for(let i=1; i<=20; i++){
+      const id = '1.' + i;
+      L.push(id + '=' + (id === '1.19' ? clean(p1[id]) : (p1[id] || 'BLANK')));
+    }
+    L.push('sec=' + (p1.sec != null ? p1.sec : 'BLANK'));
+    L.push('');
+    L.push('[P2]');
+    for(let i=1; i<=10; i++){
+      const id = '2.' + i;
+      const r = (state.a.p2 || {})[id] || {};
+      L.push(id + '|ans=' + (r.ans || 'BLANK') + '|why=' + clean(r.why) + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p3 = state.a.p3 || {g:{}, labels:{}};
+    const grp = {A:[], B:[], C:[]};
+    for(let i=1; i<=9; i++){ const v = p3.g[i]; if(v) grp[v].push(i); }
+    L.push('[P3]');
+    L.push('groups=A:[' + grp.A.join(',') + '];B:[' + grp.B.join(',') + '];C:[' + grp.C.join(',') + ']');
+    ['A','B','C'].forEach(k=>L.push('label' + k + '=' + clean((p3.labels || {})[k])));
+    L.push('sec=' + (p3.sec != null ? p3.sec : 'BLANK'));
+    L.push('');
+    L.push('[P4]');
+    for(let i=1; i<=4; i++){
+      const id = '4.' + i;
+      const r = (state.a.p4 || {})[id] || {};
+      L.push(id + '|s1=' + clean(r.s1) + '|s2=' + clean(r.s2) + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p5 = state.a.p5 || {};
+    L.push('[P5]');
+    L.push('rank=' + ((p5.rank || []).join(', ') || 'BLANK'));
+    L.push('5.2=' + clean(p5['5.2']));
+    L.push('sec=' + (p5.sec != null ? p5.sec : 'BLANK'));
+  } else {
+    L.push('[P6]');
+    for(let i=1; i<=12; i++){
+      const id = '6.' + i;
+      const r = (state.a.p6 || {})[id] || {};
+      L.push(id + '|ans=' + clean(r.ans) + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p7 = state.a.p7 || {};
+    L.push('[P7]');
+    for(let i=1; i<=3; i++) L.push('7a.' + i + '=' + clean(p7['7a.' + i]));
+    L.push('7a.sec=' + (p7.seca != null ? p7.seca : 'BLANK'));
+    for(let i=1; i<=3; i++) L.push('7b.' + i + '=' + clean(p7['7b.' + i]));
+    L.push('7b.sec=' + (p7.secb != null ? p7.secb : 'BLANK'));
+    L.push('7c=ON_PAPER');
+    L.push('');
+    L.push('[P8]');
+    for(let i=1; i<=4; i++){
+      const id = '8.' + i;
+      const r = (state.a.p8 || {})[id] || {};
+      L.push(id + '|line=' + (r.line || 'BLANK') + '|what=' + clean(r.what) + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    L.push('[P9]');
+    for(let i=1; i<=8; i++){
+      const id = '9.' + i;
+      const r = (state.a.p9 || {})[id] || {};
+      L.push(id + '|ans=' + (r.ans || 'BLANK') + '|reason=' + (r.reason || 'BLANK') + '|conf=' + (r.conf || 'BLANK') + '|sec=' + (r.sec != null ? r.sec : 'BLANK'));
+    }
+    L.push('');
+    const p10 = state.a.p10 || {};
+    L.push('[P10]');
+    for(let i=1; i<=5; i++) L.push('10.' + i + '=' + clean(p10['10.' + i]));
+    L.push('sec=' + (p10.sec != null ? p10.sec : 'BLANK'));
+    L.push('R=ON_PAPER');
+  }
+  L.push('');
+  L.push('=== END ===');
+  return L.join('\n');
+}
+
+R.gen = function(){
+  const paper = C.sitting === 2 ?
+   '<p class="b">Remember the drawings — photograph your Part 7 sketches and your Part R diagrams and send the photos with this.</p>' : '';
+  app.innerHTML =
+   '<span class="eyebrow">Sitting ' + C.sitting + ' · Finished</span>' +
+   '<h1>That’s everything.</h1>' +
+   '<p class="lede">Press the button, then send me the whole block exactly as it comes out — don’t reformat or tidy it.</p>' + paper +
+   '<div class="btnrow"><button class="btn solid" id="dogen">Generate my results</button></div>' +
+   '<div class="outwrap" id="ow" style="display:none">' +
+   '<textarea class="out" id="out" readonly></textarea>' +
+   '<div class="btnrow">' +
+   '<button class="btn" id="send">Send it to me</button>' +
+   '<button class="btn" id="copy">Copy to clipboard</button>' +
+   '</div><div class="sent" id="status"></div></div>';
+  document.getElementById('dogen').onclick = function(){
+    document.getElementById('out').value = genBlock();
+    document.getElementById('ow').style.display = 'block';
+    save();
+  };
+  document.getElementById('copy').onclick = function(){
+    const o = document.getElementById('out');
+    o.select();
+    let ok = false;
+    try{
+      if(navigator.clipboard){ navigator.clipboard.writeText(o.value); ok = true; }
+      else ok = document.execCommand('copy');
+    }catch(e){ try{ ok = document.execCommand('copy'); }catch(e2){} }
+    const st = document.getElementById('status');
+    st.textContent = ok ? 'Copied. Paste it into a message to me.' : 'Select the block and copy it by hand.';
+    st.classList.add('show');
+  };
+  document.getElementById('send').onclick = function(){
+    const btn = this, st = document.getElementById('status');
+    const block = document.getElementById('out').value;
+    if(!block){ st.textContent = 'Press Generate first.'; st.classList.add('show'); return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    const fd = new FormData();
+    fd.append('access_key', W3KEY);
+    fd.append('subject', 'Physics HL — Sitting ' + C.sitting + ' results: ' + state.name);
+    fd.append('from_name', 'MathBridge site');
+    fd.append('student', state.name);
+    fd.append('sitting', String(C.sitting));
+    fd.append('results', block);
+    fetch('https://api.web3forms.com/submit', {method:'POST', body:fd})
+      .then(r=>r.json())
+      .then(j=>{
+        if(j.success){
+          st.textContent = 'Sent — it’s on its way to me. Keep the copy above just in case.';
+          btn.textContent = 'Sent';
+        } else { throw new Error(); }
+        st.classList.add('show');
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Send it to me';
+        st.textContent = 'That didn’t go through. Copy the block instead and send it to me by email or WhatsApp.';
+        st.classList.add('show');
+      });
+  };
+};
+
+// ---------------------------------------------------------------- render loop
+function render(){
+  if(timerInt){ clearInterval(timerInt); timerInt = null; }
+  t0 = Date.now();
+  p3warned = false;
+  const s = screens[state.cur];
+  bar.style.width = (state.cur / (screens.length - 1) * 100) + '%';
+  R[s.k](s);
+  bindHighlights();
+  bindDraft();
+  window.scrollTo(0, 0);
+}
+render();
+</script></body></html>
