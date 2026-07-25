@@ -139,6 +139,27 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .jessay .jt{display:block;font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(20px,2.3vw,26px);line-height:1.14;color:var(--ink);margin:0 0 8px}
 .jessay .jd{display:block;font-size:16px;line-height:1.62;color:var(--ink2);margin:0}
 
+/* The Rooted Mathematician — the journal, as a publication */
+.nameplate{text-align:center;padding:clamp(28px,6vh,66px) 0 0}
+.nameplate .runhead{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-ink)}
+.nameplate .np{font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(38px,7.2vw,84px);line-height:1;letter-spacing:-.006em;color:var(--ink);margin:16px 0 0}
+.nameplate .standfirst{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.7vw,19.5px);line-height:1.5;color:var(--muted);margin:18px auto 0;max-width:40ch}
+.scotch{width:min(300px,56%);margin:26px auto 2px;border-top:2px solid var(--ink)}
+.scotch::after{content:"";display:block;margin-top:2px;border-top:1px solid var(--gold)}
+.rm-essays{border-top:1px solid var(--line);margin-top:6px}
+.rm-essay{display:grid;grid-template-columns:48px 1fr auto;gap:clamp(14px,2.4vw,34px);align-items:baseline;
+ padding:clamp(28px,3.6vw,44px) 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
+ transition:padding-left .4s cubic-bezier(.2,.7,.2,1),background .4s ease}
+.rm-essay:hover,.rm-essay:focus-visible{background:linear-gradient(90deg,rgba(138,109,34,.055),transparent 62%);padding-left:16px}
+.rm-no{font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.18em;color:var(--gold-ink);padding-top:13px}
+.rm-t{display:block;font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(25px,3.1vw,36px);line-height:1.1;color:var(--ink);transition:color .3s}
+.rm-essay:hover .rm-t{color:var(--gold-ink)}
+.rm-tag{display:inline-block;font-family:'Archivo',sans-serif;font-style:normal;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);vertical-align:middle;margin-left:14px}
+.rm-d{display:block;margin-top:12px;font-size:16.5px;line-height:1.64;color:var(--muted);max-width:62ch}
+.rm-cue{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);white-space:nowrap;padding-top:14px;opacity:0;transition:opacity .35s}
+.rm-essay:hover .rm-cue,.rm-essay:focus-visible .rm-cue{opacity:1}
+@media(max-width:640px){.rm-essay{grid-template-columns:1fr;gap:4px;padding-left:0}.rm-essay:hover{padding-left:0}.rm-no,.rm-cue{display:none}.rm-d{margin-top:9px}}
+
 /* split text + image */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
 .split-fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
