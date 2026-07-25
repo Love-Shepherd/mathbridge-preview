@@ -160,6 +160,30 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .rm-essay:hover .rm-cue,.rm-essay:focus-visible .rm-cue{opacity:1}
 @media(max-width:640px){.rm-essay{grid-template-columns:1fr;gap:4px;padding-left:0}.rm-essay:hover{padding-left:0}.rm-no,.rm-cue{display:none}.rm-d{margin-top:9px}}
 
+/* Courses — the ways in, joined by one gold thread */
+.ways{position:relative;margin-top:10px}
+.ways::before{content:"";position:absolute;left:5px;top:15px;bottom:64px;width:1px;
+ background:linear-gradient(180deg,transparent,var(--gold) 5%,var(--gold) 95%,transparent)}
+.way{position:relative;padding-left:clamp(28px,5vw,68px);padding-bottom:clamp(56px,9vh,108px)}
+.way:last-child{padding-bottom:6px}
+.way::before{content:"";position:absolute;left:0;top:10px;width:11px;height:11px;border-radius:50%;
+ background:var(--paper);border:1.5px solid var(--gold);box-shadow:0 0 0 5px var(--paper)}
+.way-eyebrow{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink)}
+.way-name{font-family:'Spectral',serif;font-weight:350;font-size:clamp(30px,4.4vw,50px);line-height:1.04;letter-spacing:-.014em;color:var(--ink);margin:13px 0 0}
+.way-name em{font-style:italic}
+.way-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(28px,4.5vw,62px);align-items:center;margin-top:24px}
+.way-lede{font-size:clamp(16.5px,1.6vw,18.5px);line-height:1.72;color:var(--ink2);max-width:54ch;margin:0}
+.way-meta{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:20px}
+.way-cta{margin-top:24px}
+.way-media img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.way-next{font-family:'Newsreader',serif;font-style:italic;font-size:16px;line-height:1.5;color:var(--muted);margin-top:26px;max-width:46ch}
+.way-wide{margin-top:24px}
+@media(max-width:760px){
+ .way-grid{grid-template-columns:1fr;gap:24px}
+ .way-media{order:-1}
+ .ways::before{left:4px}
+}
+
 /* split text + image */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
 .split-fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
