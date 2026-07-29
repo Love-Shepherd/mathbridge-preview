@@ -9,6 +9,12 @@ function mbEnquiry(f){
   .then(function(r){return r.json();}).then(done).catch(done);
  return false;}
 document.addEventListener('DOMContentLoaded',function(){
+ // year of study: reveal the specify field only when Other is chosen
+ document.querySelectorAll('select.js-year').forEach(function(sel){
+  var box=sel.parentNode.querySelector('.js-other'); if(!box)return;
+  var sync=function(){var o=sel.value==='Other';box.hidden=!o;
+   var i=box.querySelector('input');if(i){i.required=o;if(!o)i.value='';}};
+  sel.addEventListener('change',sync);sync();});
  // mobile menu
  var mb=document.querySelector('.menu-btn'),menu=document.querySelector('.menu');
  if(mb&&menu){mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.textContent=o?'Close':'Menu';mb.setAttribute('aria-expanded',o);});
