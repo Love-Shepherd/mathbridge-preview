@@ -104,7 +104,7 @@ footer .in{max-width:860px;margin:0 auto;padding:26px clamp(20px,5vw,40px);
 'use strict';
 const C = CONTENT;
 const KEY = 'mbphys_s' + C.sitting + '_v1';
-const W3KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
+const W3KEY = 'cd4c0350-bfba-4fd8-a5ee-eb72773f6792';
 
 function load(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ return null; } }
 let state = load() || { name:'', startedAt:new Date().toISOString(), totalSec:0, cur:0, a:{}, d:{} };
