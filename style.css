@@ -103,6 +103,13 @@ section{padding:clamp(60px,9.5vh,124px) 0}
 .path-rule.in .fill{transform:scaleX(1)}
 .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
 .course{background:var(--paper);padding:34px clamp(20px,2vw,32px) 38px;position:relative;transition:background .35s ease}
+a.course{display:block;text-decoration:none;color:inherit}
+a.course:hover{background:var(--card)}
+a.course .num{text-transform:uppercase}
+a.jentry{text-decoration:none;color:inherit;transition:opacity .25s}
+a.jentry:hover{opacity:.72}
+a.jentry .jt{border-bottom:1px solid transparent;transition:border-color .25s}
+a.jentry:hover .jt{border-bottom-color:var(--gold-l)}
 .course .num{font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.24em;color:var(--gold-ink)}
 .course h3{font-family:'Spectral',serif;font-weight:400;font-size:clamp(22px,2.4vw,28px);line-height:1.08;margin:14px 0 12px}
 .course h3 em{font-style:italic}
