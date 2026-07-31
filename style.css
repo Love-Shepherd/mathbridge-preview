@@ -396,6 +396,25 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
  font-family:'Cambria Math','Spectral',Georgia,serif}
 .essay-break{text-align:center;letter-spacing:1.1em;color:var(--gold-ink);margin:2.2em 0 1.9em;font-size:14px}
 .essay-sig{font-family:'Spectral',serif;font-style:italic;font-size:20px;color:var(--ink);margin-top:2em}
+.essay-body a{color:var(--gold-ink);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;
+ transition:border-color .2s,color .2s}
+.essay-body a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.essay-next{border-top:1px solid var(--line);margin-top:clamp(46px,7vh,76px);padding-top:26px}
+.enc-head{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+ color:var(--gold-ink);margin-bottom:20px}
+.enc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.enc{display:flex;flex-direction:column;background:var(--card);padding:24px 24px 28px;text-decoration:none;
+ position:relative;transition:background .25s}
+.enc::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--gold)}
+.enc:hover{background:var(--paper2)}
+.enc-no{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.24em;color:var(--gold-ink)}
+.enc-t{font-family:'Spectral',serif;font-weight:400;font-size:clamp(19px,2vw,23px);line-height:1.14;
+ color:var(--ink);margin:10px 0 8px}
+.enc-d{font-size:15px;line-height:1.55;color:var(--ink2);margin:0}
+.enc-go{align-self:start;margin-top:auto;padding-top:17px;font-family:'Archivo',sans-serif;font-size:10px;
+ letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);
+ box-shadow:inset 0 -1px 0 0 var(--gold)}
+@media(max-width:700px){.enc-grid{grid-template-columns:1fr}}
 .essay-further{border-top:1px solid var(--line);margin-top:clamp(46px,7vh,76px);padding-top:26px}
 .essay-further h4{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
  color:var(--gold-ink);font-weight:400;margin-bottom:14px}
