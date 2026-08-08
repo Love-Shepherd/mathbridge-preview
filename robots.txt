@@ -1,3 +1,4 @@
+# AI crawlers are allowed deliberately. The essays are meant to be found.
 User-agent: *
 Allow: /
 Disallow: /students/
