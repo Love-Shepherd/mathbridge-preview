@@ -1,4 +1,7 @@
 
+// Clickjacking guard. CSP frame-ancestors is ignored via <meta> and GitHub Pages
+// cannot send X-Frame-Options, so this is the mitigation until real headers exist.
+if(self!==top){try{top.location=self.location;}catch(e){document.documentElement.style.display='none';}}
 // Form submission. Bound by addEventListener rather than an inline onsubmit
 // attribute, so the Content-Security-Policy can forbid inline script entirely.
 function mbSubmit(f){
@@ -12,6 +15,11 @@ function mbSubmit(f){
   var t=f.parentNode.querySelector('.enq-thanks');
   if(t)t.style.display='block';
  };
+ // clamp to the declared maxlength before sending. Client-side only, so it stops
+ // accidental and casual oversize, not a determined attacker posting to the API.
+ f.querySelectorAll('input,textarea').forEach(function(e){
+  if(e.maxLength>0&&e.value.length>e.maxLength)e.value=e.value.slice(0,e.maxLength);
+ });
  var key=f.querySelector('[name=access_key]');
  if(!key||key.value.indexOf('REPLACE')===0){done();return;}   // no key yet: preview only
  f.dataset.sending='1';
