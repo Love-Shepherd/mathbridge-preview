@@ -248,7 +248,7 @@ R.intro = function(){
    '<h1>' + esc(C.titleWord) + '.</h1>' + ps +
    '<div class="rule"></div>' +
    '<span class="fl">Your name</span>' +
-   '<input type="text" id="sname" autocomplete="name" value="' + esc(state.name) + '">' +
+   '<input type="text" id="sname" autocomplete="name" value="' + esc(state.name) + '" maxlength="300">' +
    nextBtn('Begin') +
    (state.cur === 0 && Object.keys(state.a).length ?
      '<p class="b" style="margin-top:26px"><a href="#" id="reset" style="border-bottom:1px solid var(--line)">Start again from the beginning</a></p>' : '');
@@ -297,7 +297,7 @@ R.p1 = function(){
     h += '<div class="rule"></div><p class="qtext">' + s.id + ' ' + esc(s.q) + '</p>' + optList('q' + s.id, s.o, true);
   });
   h += '<div class="rule"></div><p class="qtext">' + p.free.id + ' ' + esc(p.free.q) + '</p>' +
-       '<textarea name="q' + p.free.id + '"></textarea>';
+       '<textarea name="q' + p.free.id + '" maxlength="4000"></textarea>';
   h += '<div class="rule"></div><p class="qtext">' + p.last.id + ' ' + esc(p.last.q) + '</p>' + optList('q' + p.last.id, p.last.o, true);
   h += nextBtn();
   app.innerHTML = h;
@@ -333,7 +333,7 @@ R.p2 = function(s){
    '<span class="fl">What would you reach for first?</span>' +
    optList('ans', p.options, true) +
    '<span class="fl">Why? What actually made you pick it — one sentence.</span>' +
-   '<textarea name="why"></textarea>' +
+   '<textarea name="why" maxlength="4000"></textarea>' +
    confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 2' : 'Next');
   document.getElementById('next').onclick = function(){
     const a = radioVal('ans'), w = app.querySelector('[name=why]').value.trim(), c = radioVal('conf');
@@ -356,7 +356,7 @@ R.p3 = function(){
          '<select name="g' + (i+1) + '"><option value="">—</option><option>A</option><option>B</option><option>C</option></select></div>';
   });
   ['A','B','C'].forEach(g=>{
-    h += '<span class="fl">Name for Group ' + g + '</span><input type="text" name="label' + g + '">';
+    h += '<span class="fl">Name for Group ' + g + '</span><input type="text" name="label' + g + '" maxlength="300">';
   });
   h += nextBtn();
   app.innerHTML = h;
@@ -418,7 +418,7 @@ R.p5 = function(){
     for(let v=1; v<=5; v++) h += '<option>' + v + '</option>';
     h += '</select></div>';
   });
-  h += '<div class="rule"></div><p class="qtext">5.2 ' + esc(p.q2) + '</p><textarea name="q52"></textarea>' + nextBtn('Finish Part 5');
+  h += '<div class="rule"></div><p class="qtext">5.2 ' + esc(p.q2) + '</p><textarea name="q52" maxlength="4000"></textarea>' + nextBtn('Finish Part 5');
   app.innerHTML = h;
   document.getElementById('next').onclick = function(){
     const ranks = [];
@@ -443,7 +443,7 @@ R.p6 = function(s){
    '<span class="eyebrow">' + esc(p.title) + ' · ' + (i+1) + ' of ' + p.items.length + '</span>' +
    '<div class="timer"><div class="tbarw"><div class="tbar" id="tbar"></div></div><span class="tnum" id="tnum"></span></div>' +
    '<p class="qtext">' + esc(p.items[i][0]) + '</p>' +
-   '<span class="fl">Your answer</span><input type="text" name="ans" autocomplete="off">' +
+   '<span class="fl">Your answer</span><input type="text" name="ans" autocomplete="off" maxlength="300">' +
    nextBtn('Submit');
   const input = app.querySelector('[name=ans]');
   input.focus();
@@ -473,7 +473,7 @@ R.p7a = function(){
   let h = '<span class="eyebrow">' + esc(p.title) + '</span><h1>Saying the same thing two ways.</h1>' +
           '<p class="lede">' + esc(p.aIntro) + '</p>';
   p.a.forEach((q,i)=>{
-    h += '<p class="qtext">7a.' + (i+1) + ' ' + esc(q) + '</p><textarea name="a' + (i+1) + '"></textarea><div style="height:18px"></div>';
+    h += '<p class="qtext">7a.' + (i+1) + ' ' + esc(q) + '</p><textarea name="a' + (i+1) + '" maxlength="4000"></textarea><div style="height:18px"></div>';
   });
   h += nextBtn();
   app.innerHTML = h;
@@ -491,7 +491,7 @@ R.p7b = function(){
   let h = '<span class="eyebrow">' + esc(p.title) + '</span>' +
           '<p class="lede">' + esc(p.bIntro) + '</p>';
   p.b.forEach((q,i)=>{
-    h += '<p class="qtext">7b.' + (i+1) + ' ' + esc(q) + '</p><textarea name="b' + (i+1) + '"></textarea><div style="height:18px"></div>';
+    h += '<p class="qtext">7b.' + (i+1) + ' ' + esc(q) + '</p><textarea name="b' + (i+1) + '" maxlength="4000"></textarea><div style="height:18px"></div>';
   });
   h += nextBtn();
   app.innerHTML = h;
@@ -525,7 +525,7 @@ R.p8 = function(s){
   it.lines.forEach((ln,j)=>{
     h += '<li><label class="opt"><input type="radio" name="line" value="' + (j+1) + '"><span>Line ' + (j+1) + '</span></label></li>';
   });
-  h += '</ul><span class="fl">What’s wrong with it?</span><textarea name="what"></textarea>' +
+  h += '</ul><span class="fl">What’s wrong with it?</span><textarea name="what" maxlength="4000"></textarea>' +
        confRow('conf') + nextBtn(i + 1 === p.items.length ? 'Finish Part 8' : 'Next');
   app.innerHTML = h;
   document.getElementById('next').onclick = function(){
@@ -590,7 +590,7 @@ R.p10 = function(){
           p.intro.map(t=>'<p class="lede">' + esc(t) + '</p>').join('') +
           '<div class="card"><p class="b" style="margin:0">' + esc(p.situation) + '</p></div>';
   p.items.forEach((q,i)=>{
-    h += '<p class="qtext">10.' + (i+1) + ' ' + esc(q) + '</p><textarea name="t' + (i+1) + '"></textarea><div style="height:18px"></div>';
+    h += '<p class="qtext">10.' + (i+1) + ' ' + esc(q) + '</p><textarea name="t' + (i+1) + '" maxlength="4000"></textarea><div style="height:18px"></div>';
   });
   h += nextBtn('Finish Part 10');
   app.innerHTML = h;
