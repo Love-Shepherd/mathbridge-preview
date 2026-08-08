@@ -1,14 +1,28 @@
 
-function mbThanks(f){f.querySelectorAll('input,select,textarea,button').forEach(function(e){e.style.display='none'});
- var t=f.parentNode.querySelector('.thanks');if(t)t.style.display='block';return false;}
-function mbEnquiry(f){
- var done=function(){f.style.display='none';var t=f.parentNode.querySelector('.enq-thanks')||f.parentNode.querySelector('.rr-thanks');if(t)t.style.display='block';};
+// Form submission. Bound by addEventListener rather than an inline onsubmit
+// attribute, so the Content-Security-Policy can forbid inline script entirely.
+function mbSubmit(f){
+ if(f.dataset.sending==='1')return;              // double-submit guard
+ if(!f.reportValidity())return;                  // native constraint validation
+ var btn=f.querySelector('button[type=submit]');
+ var done=function(){
+  f.dataset.sending='';
+  f.reset();                                     // clear PII from the DOM
+  f.style.display='none';
+  var t=f.parentNode.querySelector('.enq-thanks');
+  if(t)t.style.display='block';
+ };
  var key=f.querySelector('[name=access_key]');
- if(!key||key.value.indexOf('REPLACE')===0){done();return false;} // no key yet: preview only
+ if(!key||key.value.indexOf('REPLACE')===0){done();return;}   // no key yet: preview only
+ f.dataset.sending='1';
+ if(btn){btn.disabled=true;btn.textContent='Sending…';}
  fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)})
   .then(function(r){return r.json();}).then(done).catch(done);
- return false;}
+}
 document.addEventListener('DOMContentLoaded',function(){
+ document.querySelectorAll('form.enquiry').forEach(function(f){
+  f.addEventListener('submit',function(ev){ev.preventDefault();mbSubmit(f);});
+ });
  // year of study: reveal the specify field only when Other is chosen
  document.querySelectorAll('select.js-year').forEach(function(sel){
   var box=sel.parentNode.querySelector('.js-other'); if(!box)return;
