@@ -176,7 +176,7 @@ a.jentry:hover .jt{border-bottom-color:var(--gold-l)}
 /* The Rooted Mathematician — the journal, as a publication */
 .nameplate{text-align:center;padding:clamp(28px,6vh,66px) 0 0}
 .nameplate .runhead{font-family:'Archivo',sans-serif;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-ink)}
-.nameplate .np{font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(38px,7.2vw,84px);line-height:1;letter-spacing:-.006em;color:var(--ink);margin:16px 0 0}
+.nameplate .np{font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(38px,7.2vw,84px);line-height:1;letter-spacing:-.006em;color:var(--ink);margin:16px auto 0;max-width:none}
 .nameplate .standfirst{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(15px,1.7vw,19.5px);line-height:1.5;color:var(--muted);margin:18px auto 0;max-width:40ch}
 .scotch{width:min(300px,56%);margin:26px auto 2px;border-top:2px solid var(--ink)}
 .scotch::after{content:"";display:block;margin-top:2px;border-top:1px solid var(--gold)}
