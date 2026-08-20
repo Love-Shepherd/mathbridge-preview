@@ -398,7 +398,9 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .rr-form .hp{position:absolute;left:-9999px}
 @media(max-width:820px){
   .reading-featured{grid-template-columns:1fr;gap:56px}
-  .rf-cover{max-width:330px;margin:0 auto}
+  .rf-cover{max-width:330px;margin:0 auto;width:100%}  /* width:100% is required: auto side margins on a stretched grid item make the
+     box size to its content, and .pamphlet is aspect-ratio only with no intrinsic
+     width, so it collapsed to 0 and its absolutely-positioned text escaped. */
   .pamphlet{transform:none}
   .pamphlet:hover{transform:translateY(-6px)}
 }
@@ -429,6 +431,10 @@ footer.foot{background:var(--forest);color:var(--forest-tx);padding:clamp(56px,8
 .essay-eq{text-align:center;margin:1.9em 0;font-size:clamp(19px,2.4vw,25px);color:var(--ink);
  font-family:'Cambria Math','Spectral',Georgia,serif}
 .essay-break{text-align:center;letter-spacing:1.1em;color:var(--gold-ink);margin:2.2em 0 1.9em;font-size:14px}
+.essay-fig{margin:2.6em 0}
+.essay-fig img{display:block;width:100%;height:auto}
+.essay-fig figcaption{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.2em;
+ text-transform:uppercase;color:var(--muted);margin-top:12px;text-align:center}
 .essay-sig{font-family:'Spectral',serif;font-style:italic;font-size:20px;color:var(--ink);margin-top:2em}
 .essay-body a{color:var(--gold-ink);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;
  transition:border-color .2s,color .2s}
